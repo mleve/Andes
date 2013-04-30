@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+    <af:xmlContent>
+        <afc:component>
+            <afc:display-name>template1</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>Content</afc:facet-name>
+            </afc:facet>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelStretchLayout id="pt_psl1" topHeight="78px" bottomHeight="117px">
+        <f:facet name="top">
+            <af:image source="img/header.jpg" id="pt_i1"/>
+        </f:facet>
+        <f:facet name="center">
+            <!-- id="af_one_column_header_footer_stretched"   -->
+            <af:decorativeBox theme="dark" id="pt_db1">
+                <f:facet name="center">
+                    <af:decorativeBox theme="medium" id="pt_db2">
+                        <f:facet name="center">
+                            <af:facetRef facetName="Content"/>
+                        </f:facet>
+                    </af:decorativeBox>
+                </f:facet>
+            </af:decorativeBox>
+        </f:facet>
+        <f:facet name="bottom">
+            <af:panelGroupLayout id="pt_pgl1">
+                <af:outputText value="2013 Andes" id="pt_ot1"/>
+            </af:panelGroupLayout>
+        </f:facet>
+    </af:panelStretchLayout>
+</af:pageTemplateDef>

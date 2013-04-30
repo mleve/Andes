@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DatoshistoricosView"
+  Version="11.1.2.62.76"
+  SelectList="Datoshistoricos.RUT, 
+       Datoshistoricos.IDDATOS, 
+       Datoshistoricos.IDASIGNACION, 
+       Datoshistoricos.IDPROHIBIDO, 
+       Datoshistoricos.FECHA, 
+       Datoshistoricos.VERSION, 
+       Datoshistoricos.ROWID"
+  FromList="DATOSHISTORICOS Datoshistoricos"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Datoshistoricos"
+    Entity="andes.model.eo.Datoshistoricos"/>
+  <ViewAttribute
+    Name="Rut"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Rut"
+    EntityUsage="Datoshistoricos"
+    AliasName="RUT"/>
+  <ViewAttribute
+    Name="Iddatos"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Iddatos"
+    EntityUsage="Datoshistoricos"
+    AliasName="IDDATOS"/>
+  <ViewAttribute
+    Name="Idasignacion"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idasignacion"
+    EntityUsage="Datoshistoricos"
+    AliasName="IDASIGNACION"/>
+  <ViewAttribute
+    Name="Idprohibido"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idprohibido"
+    EntityUsage="Datoshistoricos"
+    AliasName="IDPROHIBIDO"/>
+  <ViewAttribute
+    Name="Fecha"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Fecha"
+    EntityUsage="Datoshistoricos"
+    AliasName="FECHA"/>
+  <ViewAttribute
+    Name="Version"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Version"
+    EntityUsage="Datoshistoricos"
+    AliasName="VERSION"/>
+  <ViewAttribute
+    Name="Rowid"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="Rowid"
+    EntityUsage="Datoshistoricos"
+    AliasName="ROWID"/>
+</ViewObject>

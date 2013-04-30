@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DemandaskillsView"
+  Version="11.1.2.62.76"
+  SelectList="Demandaskills.IDSKILL, 
+       Demandaskills.IDCARGO, 
+       Demandaskills.IDTURNO, 
+       Demandaskills.FECHA, 
+       Demandaskills.REQUERIMIENTO, 
+       Demandaskills.ROWID"
+  FromList="DEMANDASKILLS Demandaskills"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Demandaskills"
+    Entity="andes.model.eo.Demandaskills"/>
+  <ViewAttribute
+    Name="Idskill"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idskill"
+    EntityUsage="Demandaskills"
+    AliasName="IDSKILL"/>
+  <ViewAttribute
+    Name="Idcargo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idcargo"
+    EntityUsage="Demandaskills"
+    AliasName="IDCARGO"/>
+  <ViewAttribute
+    Name="Idturno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idturno"
+    EntityUsage="Demandaskills"
+    AliasName="IDTURNO"/>
+  <ViewAttribute
+    Name="Fecha"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Fecha"
+    EntityUsage="Demandaskills"
+    AliasName="FECHA"/>
+  <ViewAttribute
+    Name="Requerimiento"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Requerimiento"
+    EntityUsage="Demandaskills"
+    AliasName="REQUERIMIENTO"/>
+  <ViewAttribute
+    Name="Rowid"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="Rowid"
+    EntityUsage="Demandaskills"
+    AliasName="ROWID"/>
+</ViewObject>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Vacaciones"
+  Version="11.1.2.62.76"
+  DBObjectType="table"
+  DBObjectName="VACACIONES"
+  AliasName="Vacaciones"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="Rut"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="RUT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="VACACIONES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Fechainicio"
+    ColumnName="FECHAINICIO"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="VACACIONES"/>
+  <Attribute
+    Name="Fechatermino"
+    IsNotNull="true"
+    ColumnName="FECHATERMINO"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="VACACIONES"/>
+  <Attribute
+    Name="Rowid"
+    IsUpdateable="false"
+    ColumnName="ROWID"
+    SQLType="ROWID"
+    Type="oracle.jbo.domain.RowID"
+    ColumnType="ROWID"
+    TableName="VACACIONES"
+    PrimaryKey="true"/>
+  <AccessorAttribute
+    Name="Empleados"
+    Association="andes.model.eo.VacacionesEmpleadosFkAssoc"
+    AssociationEnd="andes.model.eo.VacacionesEmpleadosFkAssoc.Empleados"
+    AssociationOtherEnd="andes.model.eo.VacacionesEmpleadosFkAssoc.Vacaciones"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="VacacionesPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="VACACIONES_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.eo.Vacaciones.Rowid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="VacacionesEmpleadosFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLEADOS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="VACACIONES_EMPLEADOS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.eo.Vacaciones.Rut"/>
+    </AttrArray>
+  </Key>
+</Entity>

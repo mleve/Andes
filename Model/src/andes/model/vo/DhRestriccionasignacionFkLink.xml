@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DhRestriccionasignacionFkLink"
+  Version="11.1.2.62.76"
+  EntityAssociation="andes.model.eo.DhRestriccionasignacionFkAssoc">
+  <ViewLinkDefEnd
+    Name="RestriccionasignacionView"
+    Cardinality="1"
+    Source="true"
+    Owner="andes.model.vo.RestriccionasignacionView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="RestriccionasignacionView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.vo.RestriccionasignacionView.Idprohibido"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="DatoshistoricosView"
+    Cardinality="-1"
+    Owner="andes.model.vo.DatoshistoricosView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="DatoshistoricosView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.vo.DatoshistoricosView.Idprohibido"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

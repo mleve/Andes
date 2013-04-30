@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VacacionesView"
+  Version="11.1.2.62.76"
+  SelectList="Vacaciones.RUT, 
+       Vacaciones.FECHAINICIO, 
+       Vacaciones.FECHATERMINO, 
+       Vacaciones.ROWID"
+  FromList="VACACIONES Vacaciones"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Vacaciones"
+    Entity="andes.model.eo.Vacaciones"/>
+  <ViewAttribute
+    Name="Rut"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Rut"
+    EntityUsage="Vacaciones"
+    AliasName="RUT"/>
+  <ViewAttribute
+    Name="Fechainicio"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Fechainicio"
+    EntityUsage="Vacaciones"
+    AliasName="FECHAINICIO"/>
+  <ViewAttribute
+    Name="Fechatermino"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Fechatermino"
+    EntityUsage="Vacaciones"
+    AliasName="FECHATERMINO"/>
+  <ViewAttribute
+    Name="Rowid"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="Rowid"
+    EntityUsage="Vacaciones"
+    AliasName="ROWID"/>
+</ViewObject>

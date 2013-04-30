@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Restriccionasignacion"
+  Version="11.1.2.62.76"
+  DBObjectType="table"
+  DBObjectName="RESTRICCIONASIGNACION"
+  AliasName="Restriccionasignacion"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="Idprohibido"
+    IsNotNull="true"
+    ColumnName="IDPROHIBIDO"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="RESTRICCIONASIGNACION"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Idturno"
+    IsNotNull="true"
+    ColumnName="IDTURNO"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="RESTRICCIONASIGNACION"/>
+  <Attribute
+    Name="Dia"
+    IsNotNull="true"
+    ColumnName="DIA"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="RESTRICCIONASIGNACION"/>
+  <AccessorAttribute
+    Name="Datoshistoricos"
+    Association="andes.model.eo.DhRestriccionasignacionFkAssoc"
+    AssociationEnd="andes.model.eo.DhRestriccionasignacionFkAssoc.Datoshistoricos"
+    AssociationOtherEnd="andes.model.eo.DhRestriccionasignacionFkAssoc.Restriccionasignacion"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Turnos"
+    Association="andes.model.eo.TurnosprohibidosTurnosFkAssoc"
+    AssociationEnd="andes.model.eo.TurnosprohibidosTurnosFkAssoc.Turnos"
+    AssociationOtherEnd="andes.model.eo.TurnosprohibidosTurnosFkAssoc.Restriccionasignacion"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="TurnosprohibidosPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="TURNOSPROHIBIDOS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.eo.Restriccionasignacion.Idprohibido"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TurnosprohibidosTurnosFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="TURNOS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TURNOSPROHIBIDOS_TURNOS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.eo.Restriccionasignacion.Idturno"/>
+    </AttrArray>
+  </Key>
+</Entity>

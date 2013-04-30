@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="ShowVacaciones.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/template1.jsf" id="pt1">
+                <f:facet name="Content">
+                    <af:panelSplitter id="ps1" orientation="vertical">
+                        <f:facet name="first">
+                            <af:panelGroupLayout layout="vertical" id="pgl1">
+                                <af:panelHeader text="Vacaciones" id="ph1">
+                                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                                              value="#{bindings.VacEmpFromCargoCriteriaQuery.queryDescriptor}"
+                                              model="#{bindings.VacEmpFromCargoCriteriaQuery.queryModel}"
+                                              queryListener="#{bindings.VacEmpFromCargoCriteriaQuery.processQuery}"
+                                              queryOperationListener="#{bindings.VacEmpFromCargoCriteriaQuery.processQueryOperation}"
+                                              resultComponentId="t1" saveQueryMode="hidden" modeChangeVisible="false"/>
+                                </af:panelHeader>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:table value="#{bindings.VacEmpFromCargo1.collectionModel}" var="row"
+                                      rows="#{bindings.VacEmpFromCargo1.rangeSize}"
+                                      emptyText="#{bindings.VacEmpFromCargo1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      fetchSize="#{bindings.VacEmpFromCargo1.rangeSize}" rowBandingInterval="0" id="t1">
+                                <af:column sortProperty="#{bindings.VacEmpFromCargo1.hints.Rut.name}" sortable="true"
+                                           headerText="#{bindings.VacEmpFromCargo1.hints.Rut.label}" id="c1">
+                                    <af:inputText value="#{row.bindings.Rut.inputValue}"
+                                                  label="#{bindings.VacEmpFromCargo1.hints.Rut.label}"
+                                                  required="#{bindings.VacEmpFromCargo1.hints.Rut.mandatory}"
+                                                  columns="#{bindings.VacEmpFromCargo1.hints.Rut.displayWidth}"
+                                                  maximumLength="#{bindings.VacEmpFromCargo1.hints.Rut.precision}"
+                                                  shortDesc="#{bindings.VacEmpFromCargo1.hints.Rut.tooltip}" id="it1">
+                                        <f:validator binding="#{row.bindings.Rut.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.VacEmpFromCargo1.hints.Nombre.name}" sortable="true"
+                                           headerText="#{bindings.VacEmpFromCargo1.hints.Nombre.label}" id="c2">
+                                    <af:inputText value="#{row.bindings.Nombre.inputValue}"
+                                                  label="#{bindings.VacEmpFromCargo1.hints.Nombre.label}"
+                                                  required="#{bindings.VacEmpFromCargo1.hints.Nombre.mandatory}"
+                                                  columns="#{bindings.VacEmpFromCargo1.hints.Nombre.displayWidth}"
+                                                  maximumLength="#{bindings.VacEmpFromCargo1.hints.Nombre.precision}"
+                                                  shortDesc="#{bindings.VacEmpFromCargo1.hints.Nombre.tooltip}"
+                                                  id="it2">
+                                        <f:validator binding="#{row.bindings.Nombre.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.label}" id="c3">
+                                    <af:inputText value="#{row.bindings.Nombrecargo.inputValue}"
+                                                  label="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.label}"
+                                                  required="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.mandatory}"
+                                                  columns="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.displayWidth}"
+                                                  maximumLength="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.precision}"
+                                                  shortDesc="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.tooltip}"
+                                                  id="it3">
+                                        <f:validator binding="#{row.bindings.Nombrecargo.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.VacEmpFromCargo1.hints.Fechainicio.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.VacEmpFromCargo1.hints.Fechainicio.label}" id="c4">
+                                    <af:inputDate value="#{row.bindings.Fechainicio.inputValue}"
+                                                  label="#{bindings.VacEmpFromCargo1.hints.Fechainicio.label}"
+                                                  required="#{bindings.VacEmpFromCargo1.hints.Fechainicio.mandatory}"
+                                                  columns="#{bindings.VacEmpFromCargo1.hints.Fechainicio.displayWidth}"
+                                                  shortDesc="#{bindings.VacEmpFromCargo1.hints.Fechainicio.tooltip}"
+                                                  id="id1">
+                                        <f:validator binding="#{row.bindings.Fechainicio.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.VacEmpFromCargo1.hints.Fechainicio.format}"/>
+                                    </af:inputDate>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.VacEmpFromCargo1.hints.Fechatermino.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.VacEmpFromCargo1.hints.Fechatermino.label}" id="c5">
+                                    <af:inputDate value="#{row.bindings.Fechatermino.inputValue}"
+                                                  label="#{bindings.VacEmpFromCargo1.hints.Fechatermino.label}"
+                                                  required="#{bindings.VacEmpFromCargo1.hints.Fechatermino.mandatory}"
+                                                  columns="#{bindings.VacEmpFromCargo1.hints.Fechatermino.displayWidth}"
+                                                  shortDesc="#{bindings.VacEmpFromCargo1.hints.Fechatermino.tooltip}"
+                                                  id="id2">
+                                        <f:validator binding="#{row.bindings.Fechatermino.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.VacEmpFromCargo1.hints.Fechatermino.format}"/>
+                                    </af:inputDate>
+                                </af:column>
+                            </af:table>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

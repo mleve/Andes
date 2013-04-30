@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CapacityhoraCargosFkAssoc"
+  Version="11.1.2.62.76">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Cargos"
+    Cardinality="1"
+    Source="true"
+    Owner="andes.model.eo.Cargos">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Cargos"/>
+      <Attr Name="_foreignKey" Value="andes.model.eo.Cargos.CargosPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.eo.Cargos.Idcargo"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Capacityhora"
+    Cardinality="-1"
+    Owner="andes.model.eo.Capacityhora">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Capacityhora"/>
+      <Attr Name="_foreignKey" Value="andes.model.eo.Capacityhora.CapacityhoraCargosFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.eo.Capacityhora.Idcargo"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

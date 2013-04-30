@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GrupoView"
+  Version="11.1.2.62.76"
+  SelectList="Grupo.IDGRUPO, 
+       Grupo.NOMBRE, 
+       Grupo.FECHA"
+  FromList="GRUPO Grupo"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Grupo"
+    Entity="andes.model.eo.Grupo"/>
+  <ViewAttribute
+    Name="Idgrupo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idgrupo"
+    EntityUsage="Grupo"
+    AliasName="IDGRUPO"/>
+  <ViewAttribute
+    Name="Nombre"
+    PrecisionRule="true"
+    EntityAttrName="Nombre"
+    EntityUsage="Grupo"
+    AliasName="NOMBRE"/>
+  <ViewAttribute
+    Name="Fecha"
+    PrecisionRule="true"
+    EntityAttrName="Fecha"
+    EntityUsage="Grupo"
+    AliasName="FECHA"/>
+  <ViewLinkAccessor
+    Name="CoasignacionView"
+    ViewLink="andes.model.vo.CoasignacionGruposFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

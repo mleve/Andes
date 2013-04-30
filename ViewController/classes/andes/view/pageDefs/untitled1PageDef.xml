@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.62.76" id="untitled1PageDef"
+                Package="andes.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CargosView1" RangeSize="25" DataControl="andesDBDataControl" id="CargosView1Iterator"/>
+    <iterator Binds="EmpleadosView2" RangeSize="25" DataControl="andesDBDataControl" id="EmpleadosView2Iterator"/>
+    <searchRegion Binds="EmpleadosView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EmpleadosView2Query"/>
+  </executables>
+  <bindings>
+    <list IterBinding="CargosView1Iterator" ListOperMode="navigation" ListIter="CargosView1Iterator" id="CargosView1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Nombrecargo"/>
+      </AttrNames>
+    </list>
+    <tree IterBinding="EmpleadosView2Iterator" id="EmpleadosView2">
+      <nodeDefinition DefName="andes.model.vo.EmpleadosView" Name="EmpleadosView20">
+        <AttrNames>
+          <Item Value="Rut"/>
+          <Item Value="Nombre"/>
+          <Item Value="Activo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

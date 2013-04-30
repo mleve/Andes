@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Capacitaciones"
+  Version="11.1.2.62.76"
+  DBObjectType="table"
+  DBObjectName="CAPACITACIONES"
+  AliasName="Capacitaciones"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="Rut"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="RUT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CAPACITACIONES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Fechainicio"
+    ColumnName="FECHAINICIO"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="CAPACITACIONES"/>
+  <Attribute
+    Name="Fechatermino"
+    ColumnName="FECHATERMINO"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="CAPACITACIONES"/>
+  <Attribute
+    Name="Horainicio"
+    Precision="20"
+    ColumnName="HORAINICIO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CAPACITACIONES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Horatermino"
+    Precision="20"
+    ColumnName="HORATERMINO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CAPACITACIONES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Rowid"
+    IsUpdateable="false"
+    ColumnName="ROWID"
+    SQLType="ROWID"
+    Type="oracle.jbo.domain.RowID"
+    ColumnType="ROWID"
+    TableName="CAPACITACIONES"
+    PrimaryKey="true"/>
+  <AccessorAttribute
+    Name="Empleados"
+    Association="andes.model.eo.CapacitacionesEmpleadosFkAssoc"
+    AssociationEnd="andes.model.eo.CapacitacionesEmpleadosFkAssoc.Empleados"
+    AssociationOtherEnd="andes.model.eo.CapacitacionesEmpleadosFkAssoc.Capacitaciones"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="CapacitacionesEmpleadosFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMPLEADOS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CAPACITACIONES_EMPLEADOS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.eo.Capacitaciones.Rut"/>
+    </AttrArray>
+  </Key>
+</Entity>

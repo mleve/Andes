@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Empleados"
+  Version="11.1.2.62.76"
+  DBObjectType="table"
+  DBObjectName="EMPLEADOS"
+  AliasName="Empleados"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="Rut"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="RUT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMPLEADOS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Idcargo"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="IDCARGO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMPLEADOS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nombre"
+    Precision="60"
+    ColumnName="NOMBRE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMPLEADOS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Activo"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="ACTIVO"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="EMPLEADOS"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Datoshistoricos"
+    Association="andes.model.eo.DhEmpleadosFkAssoc"
+    AssociationEnd="andes.model.eo.DhEmpleadosFkAssoc.Datoshistoricos"
+    AssociationOtherEnd="andes.model.eo.DhEmpleadosFkAssoc.Empleados"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Capacitaciones"
+    Association="andes.model.eo.CapacitacionesEmpleadosFkAssoc"
+    AssociationEnd="andes.model.eo.CapacitacionesEmpleadosFkAssoc.Capacitaciones"
+    AssociationOtherEnd="andes.model.eo.CapacitacionesEmpleadosFkAssoc.Empleados"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Coasignacion"
+    Association="andes.model.eo.CoasignacionEmpleadosFkAssoc"
+    AssociationEnd="andes.model.eo.CoasignacionEmpleadosFkAssoc.Coasignacion"
+    AssociationOtherEnd="andes.model.eo.CoasignacionEmpleadosFkAssoc.Empleados"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Cargos"
+    Association="andes.model.eo.EmpleadosCargosFkAssoc"
+    AssociationEnd="andes.model.eo.EmpleadosCargosFkAssoc.Cargos"
+    AssociationOtherEnd="andes.model.eo.EmpleadosCargosFkAssoc.Empleados"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Empleadosxskill"
+    Association="andes.model.eo.EmpleadosxskillEmpleadosFkAssoc"
+    AssociationEnd="andes.model.eo.EmpleadosxskillEmpleadosFkAssoc.Empleadosxskill"
+    AssociationOtherEnd="andes.model.eo.EmpleadosxskillEmpleadosFkAssoc.Empleados"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Vacaciones"
+    Association="andes.model.eo.VacacionesEmpleadosFkAssoc"
+    AssociationEnd="andes.model.eo.VacacionesEmpleadosFkAssoc.Vacaciones"
+    AssociationOtherEnd="andes.model.eo.VacacionesEmpleadosFkAssoc.Empleados"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="EmpleadosPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMPLEADOS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.eo.Empleados.Rut"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EmpleadosCargosFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CARGOS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EMPLEADOS_CARGOS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.eo.Empleados.Idcargo"/>
+    </AttrArray>
+  </Key>
+</Entity>

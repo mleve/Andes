@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CoasignacionGruposFkLink"
+  Version="11.1.2.62.76"
+  EntityAssociation="andes.model.eo.CoasignacionGruposFkAssoc">
+  <ViewLinkDefEnd
+    Name="GrupoView"
+    Cardinality="1"
+    Source="true"
+    Owner="andes.model.vo.GrupoView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="GrupoView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.vo.GrupoView.Idgrupo"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="CoasignacionView"
+    Cardinality="-1"
+    Owner="andes.model.vo.CoasignacionView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="CoasignacionView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.vo.CoasignacionView.Idgrupo"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

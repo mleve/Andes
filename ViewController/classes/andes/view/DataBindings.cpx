@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.62.76" id="DataBindings"
+             SeparateXMLFiles="false" Package="andes.view" ClientType="Generic">
+  <pageMap>
+    <page path="/untitled1.jsf" usageId="andes_view_untitled1PageDef"/>
+    <page path="/ShowVacaciones.jsf" usageId="andes_view_ShowVacacionesPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="andes_view_untitled1PageDef" path="andes.view.pageDefs.untitled1PageDef"/>
+    <page id="andes_view_ShowVacacionesPageDef" path="andes.view.pageDefs.ShowVacacionesPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="andesDBDataControl" Package="andes.model.vo"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="andesDBLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

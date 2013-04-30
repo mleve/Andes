@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.62.76" id="ShowVacacionesPageDef"
+                Package="andes.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="VacEmpFromCargo1" RangeSize="25" DataControl="andesDBDataControl" id="VacEmpFromCargo1Iterator"/>
+    <searchRegion Criteria="VacEmpFromCargoCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="VacEmpFromCargo1Iterator" id="VacEmpFromCargoCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="VacEmpFromCargo1Iterator" id="VacEmpFromCargo1">
+      <nodeDefinition DefName="andes.model.vo.VacEmpFromCargo" Name="VacEmpFromCargo10">
+        <AttrNames>
+          <Item Value="Rut"/>
+          <Item Value="Nombre"/>
+          <Item Value="Nombrecargo"/>
+          <Item Value="Fechainicio"/>
+          <Item Value="Fechatermino"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

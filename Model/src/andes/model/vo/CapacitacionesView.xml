@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CapacitacionesView"
+  Version="11.1.2.62.76"
+  SelectList="Capacitaciones.RUT, 
+       Capacitaciones.FECHAINICIO, 
+       Capacitaciones.FECHATERMINO, 
+       Capacitaciones.HORAINICIO, 
+       Capacitaciones.HORATERMINO, 
+       Capacitaciones.ROWID"
+  FromList="CAPACITACIONES Capacitaciones"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Capacitaciones"
+    Entity="andes.model.eo.Capacitaciones"/>
+  <ViewAttribute
+    Name="Rut"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Rut"
+    EntityUsage="Capacitaciones"
+    AliasName="RUT"/>
+  <ViewAttribute
+    Name="Fechainicio"
+    PrecisionRule="true"
+    EntityAttrName="Fechainicio"
+    EntityUsage="Capacitaciones"
+    AliasName="FECHAINICIO"/>
+  <ViewAttribute
+    Name="Fechatermino"
+    PrecisionRule="true"
+    EntityAttrName="Fechatermino"
+    EntityUsage="Capacitaciones"
+    AliasName="FECHATERMINO"/>
+  <ViewAttribute
+    Name="Horainicio"
+    PrecisionRule="true"
+    EntityAttrName="Horainicio"
+    EntityUsage="Capacitaciones"
+    AliasName="HORAINICIO"/>
+  <ViewAttribute
+    Name="Horatermino"
+    PrecisionRule="true"
+    EntityAttrName="Horatermino"
+    EntityUsage="Capacitaciones"
+    AliasName="HORATERMINO"/>
+  <ViewAttribute
+    Name="Rowid"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="Rowid"
+    EntityUsage="Capacitaciones"
+    AliasName="ROWID"/>
+</ViewObject>

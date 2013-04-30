@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TurnosView"
+  Version="11.1.2.62.76"
+  SelectList="Turnos.IDTURNO, 
+       Turnos.NOMBRETURNO, 
+       Turnos.TIPOTURNO, 
+       Turnos.HORAINGRESO, 
+       Turnos.HORASALIDA"
+  FromList="TURNOS Turnos"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Turnos"
+    Entity="andes.model.eo.Turnos"/>
+  <ViewAttribute
+    Name="Idturno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idturno"
+    EntityUsage="Turnos"
+    AliasName="IDTURNO"/>
+  <ViewAttribute
+    Name="Nombreturno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Nombreturno"
+    EntityUsage="Turnos"
+    AliasName="NOMBRETURNO"/>
+  <ViewAttribute
+    Name="Tipoturno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Tipoturno"
+    EntityUsage="Turnos"
+    AliasName="TIPOTURNO"/>
+  <ViewAttribute
+    Name="Horaingreso"
+    PrecisionRule="true"
+    EntityAttrName="Horaingreso"
+    EntityUsage="Turnos"
+    AliasName="HORAINGRESO"/>
+  <ViewAttribute
+    Name="Horasalida"
+    PrecisionRule="true"
+    EntityAttrName="Horasalida"
+    EntityUsage="Turnos"
+    AliasName="HORASALIDA"/>
+  <ViewLinkAccessor
+    Name="FijarasignacionView"
+    ViewLink="andes.model.vo.FijarasignacionTurnosFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CapacityView"
+    ViewLink="andes.model.vo.CapacityTurnosFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="DemandaskillsView"
+    ViewLink="andes.model.vo.DemandaskillsTurnosFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="RestriccionasignacionView"
+    ViewLink="andes.model.vo.TurnosprohibidosTurnosFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

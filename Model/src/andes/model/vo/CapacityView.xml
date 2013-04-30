@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CapacityView"
+  Version="11.1.2.62.76"
+  SelectList="Capacity.FECHA, 
+       Capacity.REQUERIMIENTO, 
+       Capacity.IDTURNO, 
+       Capacity.IDCARGO, 
+       Capacity.ROWID"
+  FromList="CAPACITY Capacity"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Capacity"
+    Entity="andes.model.eo.Capacity"/>
+  <ViewAttribute
+    Name="Fecha"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Fecha"
+    EntityUsage="Capacity"
+    AliasName="FECHA"/>
+  <ViewAttribute
+    Name="Requerimiento"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Requerimiento"
+    EntityUsage="Capacity"
+    AliasName="REQUERIMIENTO"/>
+  <ViewAttribute
+    Name="Idturno"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idturno"
+    EntityUsage="Capacity"
+    AliasName="IDTURNO"/>
+  <ViewAttribute
+    Name="Idcargo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idcargo"
+    EntityUsage="Capacity"
+    AliasName="IDCARGO"/>
+  <ViewAttribute
+    Name="Rowid"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="Rowid"
+    EntityUsage="Capacity"
+    AliasName="ROWID"/>
+</ViewObject>

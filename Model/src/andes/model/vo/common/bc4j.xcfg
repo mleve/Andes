@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="andes.model.vo.andesDB">
+      <AppModuleConfig name="andesDBLocal" jbo.project="andes.model.Model" ApplicationName="andes.model.vo.andesDB" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="andes.model.vo.andesDB"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/devDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="andesDBShared" jbo.project="andes.model.Model" ApplicationName="andes.model.vo.andesDB" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="andes.model.vo.andesDB"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/devDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

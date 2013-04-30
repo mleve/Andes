@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DatosempleadoView"
+  Version="11.1.2.62.76"
+  SelectList="Datosempleado.IDDATOS, 
+       Datosempleado.DIASTRABAJADOS, 
+       Datosempleado.DIASDESCANSADOS, 
+       Datosempleado.MAXNOCHES, 
+       Datosempleado.LIBRESPOSTSALIENTE, 
+       Datosempleado.FINESDESEMANALIBRES"
+  FromList="DATOSEMPLEADO Datosempleado"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Datosempleado"
+    Entity="andes.model.eo.Datosempleado"/>
+  <ViewAttribute
+    Name="Iddatos"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Iddatos"
+    EntityUsage="Datosempleado"
+    AliasName="IDDATOS"/>
+  <ViewAttribute
+    Name="Diastrabajados"
+    PrecisionRule="true"
+    EntityAttrName="Diastrabajados"
+    EntityUsage="Datosempleado"
+    AliasName="DIASTRABAJADOS"/>
+  <ViewAttribute
+    Name="Diasdescansados"
+    PrecisionRule="true"
+    EntityAttrName="Diasdescansados"
+    EntityUsage="Datosempleado"
+    AliasName="DIASDESCANSADOS"/>
+  <ViewAttribute
+    Name="Maxnoches"
+    PrecisionRule="true"
+    EntityAttrName="Maxnoches"
+    EntityUsage="Datosempleado"
+    AliasName="MAXNOCHES"/>
+  <ViewAttribute
+    Name="Librespostsaliente"
+    PrecisionRule="true"
+    EntityAttrName="Librespostsaliente"
+    EntityUsage="Datosempleado"
+    AliasName="LIBRESPOSTSALIENTE"/>
+  <ViewAttribute
+    Name="Finesdesemanalibres"
+    PrecisionRule="true"
+    EntityAttrName="Finesdesemanalibres"
+    EntityUsage="Datosempleado"
+    AliasName="FINESDESEMANALIBRES"/>
+  <ViewLinkAccessor
+    Name="DatoshistoricosView"
+    ViewLink="andes.model.vo.DhDatosEmpleadoFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

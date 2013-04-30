@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpleadosxskillView"
+  Version="11.1.2.62.76"
+  SelectList="Empleadosxskill.RUT, 
+       Empleadosxskill.IDSKILL, 
+       Empleadosxskill.FECHA, 
+       Empleadosxskill.ROWID"
+  FromList="EMPLEADOSXSKILL Empleadosxskill"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Empleadosxskill"
+    Entity="andes.model.eo.Empleadosxskill"/>
+  <ViewAttribute
+    Name="Rut"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Rut"
+    EntityUsage="Empleadosxskill"
+    AliasName="RUT"/>
+  <ViewAttribute
+    Name="Idskill"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idskill"
+    EntityUsage="Empleadosxskill"
+    AliasName="IDSKILL"/>
+  <ViewAttribute
+    Name="Fecha"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Fecha"
+    EntityUsage="Empleadosxskill"
+    AliasName="FECHA"/>
+  <ViewAttribute
+    Name="Rowid"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="Rowid"
+    EntityUsage="Empleadosxskill"
+    AliasName="ROWID"/>
+</ViewObject>

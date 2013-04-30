@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Cargos"
+  Version="11.1.2.62.76"
+  DBObjectType="table"
+  DBObjectName="CARGOS"
+  AliasName="Cargos"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="Idcargo"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="IDCARGO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CARGOS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nombrecargo"
+    IsNotNull="true"
+    Precision="40"
+    ColumnName="NOMBRECARGO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CARGOS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Metacargo"
+    Precision="20"
+    ColumnName="METACARGO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CARGOS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Capacityhora"
+    Association="andes.model.eo.CapacityhoraCargosFkAssoc"
+    AssociationEnd="andes.model.eo.CapacityhoraCargosFkAssoc.Capacityhora"
+    AssociationOtherEnd="andes.model.eo.CapacityhoraCargosFkAssoc.Cargos"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Capacity"
+    Association="andes.model.eo.CapacityCargosFkAssoc"
+    AssociationEnd="andes.model.eo.CapacityCargosFkAssoc.Capacity"
+    AssociationOtherEnd="andes.model.eo.CapacityCargosFkAssoc.Cargos"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Demandaskills"
+    Association="andes.model.eo.DemandaskillsCargosFkAssoc"
+    AssociationEnd="andes.model.eo.DemandaskillsCargosFkAssoc.Demandaskills"
+    AssociationOtherEnd="andes.model.eo.DemandaskillsCargosFkAssoc.Cargos"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Empleados"
+    Association="andes.model.eo.EmpleadosCargosFkAssoc"
+    AssociationEnd="andes.model.eo.EmpleadosCargosFkAssoc.Empleados"
+    AssociationOtherEnd="andes.model.eo.EmpleadosCargosFkAssoc.Cargos"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Skills"
+    Association="andes.model.eo.SkillsCargosFkAssoc"
+    AssociationEnd="andes.model.eo.SkillsCargosFkAssoc.Skills"
+    AssociationOtherEnd="andes.model.eo.SkillsCargosFkAssoc.Cargos"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="CargosPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CARGOS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.eo.Cargos.Idcargo"/>
+    </AttrArray>
+  </Key>
+</Entity>
