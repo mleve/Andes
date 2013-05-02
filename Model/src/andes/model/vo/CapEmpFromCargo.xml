@@ -3,28 +3,28 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="VacEmpFromCargo"
+  Name="CapEmpFromCargo"
   Version="11.1.2.62.76"
   SelectList="Empleados.RUT, 
        Empleados.NOMBRE, 
        Cargos.NOMBRECARGO, 
-       Vacaciones.FECHAINICIO, 
-       Vacaciones.FECHATERMINO, 
-       Vacaciones.ROWID, 
+       Capacitaciones.FECHAINICIO, 
+       Capacitaciones.FECHATERMINO, 
+       Capacitaciones.HORAINICIO, 
+       Capacitaciones.HORATERMINO, 
        Cargos.IDCARGO, 
-       Cargos.IDCARGO AS IDCARGO1, 
-       Vacaciones.RUT AS RUT1"
-  FromList="VACACIONES Vacaciones, EMPLEADOS Empleados, CARGOS Cargos"
-  Where="(Vacaciones.RUT = Empleados.RUT) AND (Empleados.IDCARGO = Cargos.IDCARGO)"
+       Capacitaciones.ROWID"
+  FromList="CAPACITACIONES Capacitaciones, CARGOS Cargos, EMPLEADOS Empleados"
+  Where="(Empleados.IDCARGO = Cargos.IDCARGO) AND (Capacitaciones.RUT = Empleados.RUT)"
+  OrderBy="Capacitaciones.FECHAINICIO"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  UseGlueCode="false"
-  OrderBy="Vacaciones.FECHAINICIO asc">
+  UseGlueCode="false">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="andes.model.vo.VacEmpFromCargo_LABEL"/>
+        ResId="andes.model.vo.CapEmpFromCargo_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <Variable
@@ -34,11 +34,11 @@
     <Properties>
       <SchemaBasedProperties>
         <FMT_FORMATTER
-          ResId="andes.model.vo.VacEmpFromCargo.min_date_FMT_FORMATTER"/>
+          ResId="andes.model.vo.CapEmpFromCargo.min_date_FMT_FORMATTER"/>
         <FMT_FORMAT
-          ResId="andes.model.vo.VacEmpFromCargo.min_date_FMT_FORMAT"/>
+          ResId="andes.model.vo.CapEmpFromCargo.min_date_FMT_FORMAT"/>
         <LABEL
-          ResId="andes.model.vo.VacEmpFromCargo.min_date_LABEL"/>
+          ResId="andes.model.vo.CapEmpFromCargo.min_date_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Variable>
@@ -49,22 +49,22 @@
     <Properties>
       <SchemaBasedProperties>
         <FMT_FORMATTER
-          ResId="andes.model.vo.VacEmpFromCargo.max_date_FMT_FORMATTER"/>
+          ResId="andes.model.vo.CapEmpFromCargo.max_date_FMT_FORMATTER"/>
         <FMT_FORMAT
-          ResId="andes.model.vo.VacEmpFromCargo.max_date_FMT_FORMAT"/>
+          ResId="andes.model.vo.CapEmpFromCargo.max_date_FMT_FORMAT"/>
         <LABEL
-          ResId="andes.model.vo.VacEmpFromCargo.max_date_LABEL"/>
+          ResId="andes.model.vo.CapEmpFromCargo.max_date_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Variable>
   <Variable
-    Name="nameCargo"
+    Name="cargoName"
     Kind="viewcriteria"
     Type="java.lang.String">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="andes.model.vo.VacEmpFromCargo.nameCargo_LABEL"/>
+          ResId="andes.model.vo.CapEmpFromCargo.cargoName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Variable>
@@ -76,7 +76,8 @@
     Name="LOV_Idcargo"
     ListVOName="CargosView1"
     ListRangeSize="-1"
-    NullValueFlag="none"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="Idcargo"/>
@@ -90,33 +91,14 @@
     <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
-    Name="Vacaciones"
-    Entity="andes.model.eo.Vacaciones"/>
-  <EntityUsage
-    Name="Empleados"
-    Entity="andes.model.eo.Empleados"
-    Association="andes.model.eo.VacacionesEmpleadosFkAssoc"
-    AssociationEnd="andes.model.eo.VacacionesEmpleadosFkAssoc.Empleados"
-    SourceUsage="andes.model.vo.VacEmpFromCargo.Vacaciones"
-    ReadOnly="true"
-    Reference="true"
-    DeleteParticipant="false"
-    JoinType="INNER JOIN">
-    <DesignTime>
-      <AttrArray Name="_srcAttributes">
-        <Item Value="andes.model.eo.Vacaciones.Rut"/>
-      </AttrArray>
-      <AttrArray Name="_dstAttributes">
-        <Item Value="andes.model.eo.Empleados.Rut"/>
-      </AttrArray>
-    </DesignTime>
-  </EntityUsage>
+    Name="Capacitaciones"
+    Entity="andes.model.eo.Capacitaciones"/>
   <EntityUsage
     Name="Cargos"
     Entity="andes.model.eo.Cargos"
     Association="andes.model.eo.EmpleadosCargosFkAssoc"
     AssociationEnd="andes.model.eo.EmpleadosCargosFkAssoc.Cargos"
-    SourceUsage="andes.model.vo.VacEmpFromCargo.Empleados"
+    SourceUsage="andes.model.vo.CapEmpFromCargo.Empleados"
     ReadOnly="true"
     Reference="true"
     DeleteParticipant="false"
@@ -130,6 +112,25 @@
       </AttrArray>
     </DesignTime>
   </EntityUsage>
+  <EntityUsage
+    Name="Empleados"
+    Entity="andes.model.eo.Empleados"
+    Association="andes.model.eo.CapacitacionesEmpleadosFkAssoc"
+    AssociationEnd="andes.model.eo.CapacitacionesEmpleadosFkAssoc.Empleados"
+    SourceUsage="andes.model.vo.CapEmpFromCargo.Capacitaciones"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="andes.model.eo.Capacitaciones.Rut"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="andes.model.eo.Empleados.Rut"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Rut"
     IsUpdateable="false"
@@ -140,12 +141,14 @@
     AliasName="RUT"/>
   <ViewAttribute
     Name="Nombre"
+    IsUpdateable="false"
     PrecisionRule="true"
     EntityAttrName="Nombre"
     EntityUsage="Empleados"
     AliasName="NOMBRE"/>
   <ViewAttribute
     Name="Nombrecargo"
+    IsUpdateable="false"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Nombrecargo"
@@ -153,27 +156,31 @@
     AliasName="NOMBRECARGO"/>
   <ViewAttribute
     Name="Fechainicio"
-    IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Fechainicio"
-    EntityUsage="Vacaciones"
+    EntityUsage="Capacitaciones"
     AliasName="FECHAINICIO"/>
   <ViewAttribute
     Name="Fechatermino"
-    IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Fechatermino"
-    EntityUsage="Vacaciones"
+    EntityUsage="Capacitaciones"
     AliasName="FECHATERMINO"/>
   <ViewAttribute
-    Name="Rowid"
-    IsUpdateable="false"
+    Name="Horainicio"
     PrecisionRule="true"
-    EntityAttrName="Rowid"
-    EntityUsage="Vacaciones"
-    AliasName="ROWID"/>
+    EntityAttrName="Horainicio"
+    EntityUsage="Capacitaciones"
+    AliasName="HORAINICIO"/>
+  <ViewAttribute
+    Name="Horatermino"
+    PrecisionRule="true"
+    EntityAttrName="Horatermino"
+    EntityUsage="Capacitaciones"
+    AliasName="HORATERMINO"/>
   <ViewAttribute
     Name="Idcargo"
+    IsUpdateable="false"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Idcargo"
@@ -188,28 +195,21 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="Idcargo1"
-    IsNotNull="true"
+    Name="Rowid"
+    IsUpdateable="false"
     PrecisionRule="true"
-    EntityAttrName="Idcargo"
-    EntityUsage="Cargos"
-    AliasName="IDCARGO1"/>
-  <ViewAttribute
-    Name="Rut1"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="Rut"
-    EntityUsage="Vacaciones"
-    AliasName="RUT1"/>
+    EntityAttrName="Rowid"
+    EntityUsage="Capacitaciones"
+    AliasName="ROWID"/>
   <ViewCriteria
-    Name="VacEmpFromCargoCriteria"
-    ViewObjectName="andes.model.vo.VacEmpFromCargo"
+    Name="CapEmpFromCargoCriteria"
+    ViewObjectName="andes.model.vo.CapEmpFromCargo"
     Conjunction="AND">
     <Properties>
       <CustomProperties>
         <Property
           Name="displayOperators"
-          Value="Never"/>
+          Value="InAdvancedMode"/>
         <Property
           Name="autoExecute"
           Value="false"/>
@@ -225,10 +225,10 @@
       </CustomProperties>
     </Properties>
     <ViewCriteriaRow
-      Name="VacEmpFromCargoCriteria_row_0"
+      Name="CapEmpFromCargoCriteria_row_0"
       UpperColumns="1">
       <ViewCriteriaItem
-        Name="VacEmpFromCargoCriteria_VacEmpFromCargoCriteria_row_0_Fechainicio"
+        Name="CapEmpFromCargoCriteria_CapEmpFromCargoCriteria_row_0_Fechainicio"
         ViewAttribute="Fechainicio"
         Operator="ONORAFTER"
         Conjunction="AND"
@@ -236,7 +236,7 @@
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem
-        Name="VacEmpFromCargoCriteria_VacEmpFromCargoCriteria_row_0_Fechatermino"
+        Name="CapEmpFromCargoCriteria_CapEmpFromCargoCriteria_row_0_Fechatermino"
         ViewAttribute="Fechatermino"
         Operator="ONORBEFORE"
         Conjunction="AND"
@@ -248,25 +248,15 @@
         ViewAttribute="Idcargo"
         Operator="="
         Conjunction="AND"
-        Value=":nameCargo"
+        Value=":cargoName"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <AttrArray Name="KeyAttributes">
+    <Item Value="Idcargo"/>
     <Item Value="Rowid"/>
   </AttrArray>
-  <LOVUIHints
-    ListType="105"
-    MRUCount="0"
-    ListRangeSize="-1"
-    ComboAttributeCount="1"
-    NullValueFlag="none">
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Nombrecargo"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </LOVUIHints>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="andes.model.ModelBundle"/>

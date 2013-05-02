@@ -16,6 +16,28 @@
   CustomQuery="false"
   PageIterMode="Full"
   UseGlueCode="false">
+  <ViewAccessor
+    Name="EmpleadosView1"
+    ViewObjectName="andes.model.vo.EmpleadosView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Rut"
+    ListVOName="EmpleadosView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Rut"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Rut"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Rut"/>
+      <Item Value="Nombre"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Capacitaciones"
     Entity="andes.model.eo.Capacitaciones"/>
@@ -25,7 +47,15 @@
     PrecisionRule="true"
     EntityAttrName="Rut"
     EntityUsage="Capacitaciones"
-    AliasName="RUT"/>
+    AliasName="RUT"
+    LOVName="LOV_Rut">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Fechainicio"
     PrecisionRule="true"

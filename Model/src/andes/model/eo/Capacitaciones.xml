@@ -27,16 +27,18 @@
     Name="Fechainicio"
     ColumnName="FECHAINICIO"
     SQLType="DATE"
-    Type="oracle.jbo.domain.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="CAPACITACIONES"/>
+    TableName="CAPACITACIONES"
+    IsNotNull="true"/>
   <Attribute
     Name="Fechatermino"
     ColumnName="FECHATERMINO"
     SQLType="DATE"
-    Type="oracle.jbo.domain.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="CAPACITACIONES"/>
+    TableName="CAPACITACIONES"
+    IsNotNull="true"/>
   <Attribute
     Name="Horainicio"
     Precision="20"
@@ -44,7 +46,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="CAPACITACIONES">
+    TableName="CAPACITACIONES"
+    IsNotNull="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
@@ -56,7 +59,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="CAPACITACIONES">
+    TableName="CAPACITACIONES"
+    IsNotNull="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
@@ -77,6 +81,16 @@
     AssociationOtherEnd="andes.model.eo.CapacitacionesEmpleadosFkAssoc.Capacitaciones"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <Key
+    Name="CapacitacionesPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CAPACITACIONES_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="andes.model.eo.Capacitaciones.Rowid"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="CapacitacionesEmpleadosFk">
     <DesignTime>

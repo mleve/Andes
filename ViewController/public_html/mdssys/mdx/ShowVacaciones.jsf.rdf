@@ -4,4 +4,10 @@
       false
     </customizationAllowed>
   </rdf:Description>
+  <rdf:Description rdf:about="ps2">
+    <customizationAllowed xmlns="http://xmlns.oracle.com/mds">
+      false
+    </customizationAllowed>
+  </rdf:Description>
+  <rdf:Description rdf:about="ps1"/>
 </rdf:RDF>

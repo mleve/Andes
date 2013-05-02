@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.62.76" id="ShowCapsPageDef"
+                Package="andes.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CapEmpFromCargo1" RangeSize="25" DataControl="andesDBDataControl" id="CapEmpFromCargo1Iterator"/>
+    <searchRegion Criteria="CapEmpFromCargoCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CapEmpFromCargo1Iterator" id="CapEmpFromCargoCriteriaQuery"/>
+    <iterator Binds="CapacitacionesView1" RangeSize="25" DataControl="andesDBDataControl"
+              id="CapacitacionesView1Iterator"/>
+    <invokeAction id="invokeCreateInsert" Binds="CreateInsert" Refresh="prepareModel"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CapEmpFromCargo1Iterator" id="CapEmpFromCargo1">
+      <nodeDefinition DefName="andes.model.vo.CapEmpFromCargo" Name="CapEmpFromCargo10">
+        <AttrNames>
+          <Item Value="Rut"/>
+          <Item Value="Nombre"/>
+          <Item Value="Nombrecargo"/>
+          <Item Value="Fechainicio"/>
+          <Item Value="Fechatermino"/>
+          <Item Value="Horainicio"/>
+          <Item Value="Horatermino"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="CapacitacionesView1Iterator" id="Rut">
+      <AttrNames>
+        <Item Value="Rut"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CapacitacionesView1Iterator" id="Fechainicio">
+      <AttrNames>
+        <Item Value="Fechainicio"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CapacitacionesView1Iterator" id="Fechatermino">
+      <AttrNames>
+        <Item Value="Fechatermino"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CapacitacionesView1Iterator" id="Horainicio">
+      <AttrNames>
+        <Item Value="Horainicio"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CapacitacionesView1Iterator" id="Horatermino">
+      <AttrNames>
+        <Item Value="Horatermino"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CapacitacionesView1Iterator" id="CreateInsert"
+            InstanceName="andesDBDataControl.CapacitacionesView1" DataControl="andesDBDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <list IterBinding="CapacitacionesView1Iterator" StaticList="false" Uses="LOV_Rut" id="Rut1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

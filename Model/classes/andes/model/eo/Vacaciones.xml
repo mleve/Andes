@@ -9,7 +9,8 @@
   DBObjectName="VACACIONES"
   AliasName="Vacaciones"
   BindingStyle="OracleName"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="Rut"
     IsNotNull="true"
@@ -29,7 +30,8 @@
     SQLType="DATE"
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="VACACIONES"/>
+    TableName="VACACIONES"
+    IsNotNull="true"/>
   <Attribute
     Name="Fechatermino"
     IsNotNull="true"
@@ -75,4 +77,8 @@
       <Item Value="andes.model.eo.Vacaciones.Rut"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="andes.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>
