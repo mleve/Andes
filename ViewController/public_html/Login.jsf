@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Login.jsf" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/template1.jsf" id="pt1">
+                <f:facet name="Content">
+                    <af:panelStretchLayout id="psl1">
+                        <f:facet name="bottom"/>
+                        <f:facet name="center">
+                            <af:panelGroupLayout layout="vertical" id="pgl1" inlineStyle="text-align:left;">
+                                <af:inputText label="Usuario:" id="it1"/>
+                                <af:inputText label="Contraseña:" id="it2" secret="true"/>
+                                <af:goButton text="Aceptar" id="gb1" destination="ShowVacaciones.jsf"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="start"/>
+                        <f:facet name="end"/>
+                        <f:facet name="top"/>
+                    </af:panelStretchLayout>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

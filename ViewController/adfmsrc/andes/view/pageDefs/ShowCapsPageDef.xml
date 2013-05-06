@@ -31,6 +31,9 @@
         <Item Value="Horatermino"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="CapEmpFromCargo1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="andesDBDataControl"/>
     <tree IterBinding="CapEmpFromCargo1Iterator" id="CapEmpFromCargo1">
       <nodeDefinition DefName="andes.model.vo.CapEmpFromCargo" Name="CapEmpFromCargo10">
         <AttrNames>
@@ -44,8 +47,5 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="CapEmpFromCargo1Iterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="andesDBDataControl"/>
   </bindings>
 </pageDefinition>

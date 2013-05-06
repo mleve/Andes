@@ -23,64 +23,61 @@
                                 <af:panelSplitter id="ps2"
                                                   disabled="true" splitterPosition="759" styleClass="AFStretchWidth">
                                     <f:facet name="first">
-                                        <af:panelGroupLayout layout="scroll" id="pgl5" inlineStyle="width:100%;">
-                                            <af:table value="#{bindings.CapEmpFromCargo1.collectionModel}" var="row"
-                                                      rows="#{bindings.CapEmpFromCargo1.rangeSize}"
-                                                      emptyText="#{bindings.CapEmpFromCargo1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                                      fetchSize="#{bindings.CapEmpFromCargo1.rangeSize}"
-                                                      rowBandingInterval="0"
-                                                      selectedRowKeys="#{bindings.CapEmpFromCargo1.collectionModel.selectedRow}"
-                                                      selectionListener="#{bindings.CapEmpFromCargo1.collectionModel.makeCurrent}"
-                                                      rowSelection="single" id="t1" partialTriggers="::cb2"
-                                                      inlineStyle="width:100%;">
-                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Rut.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Rut.label}"
-                                                           id="c1">
-                                                    <af:outputText value="#{row.Rut}" id="ot1"/>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Nombre.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Nombre.label}"
-                                                           id="c2">
-                                                    <af:outputText value="#{row.Nombre}" id="ot2"/>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.label}"
-                                                           id="c3">
-                                                    <af:outputText value="#{row.Nombrecargo}" id="ot3"/>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Fechainicio.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Fechainicio.label}"
-                                                           id="c4">
-                                                    <af:outputText value="#{row.Fechainicio}" id="ot4">
-                                                        <af:convertDateTime pattern="#{bindings.CapEmpFromCargo1.hints.Fechainicio.format}"/>
-                                                    </af:outputText>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Fechatermino.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Fechatermino.label}"
-                                                           id="c5">
-                                                    <af:outputText value="#{row.Fechatermino}" id="ot5">
-                                                        <af:convertDateTime pattern="#{bindings.CapEmpFromCargo1.hints.Fechatermino.format}"/>
-                                                    </af:outputText>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Horainicio.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Horainicio.label}"
-                                                           id="c6">
-                                                    <af:outputText value="#{row.Horainicio}" id="ot6"/>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Horatermino.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Horatermino.label}"
-                                                           id="c7">
-                                                    <af:outputText value="#{row.Horatermino}" id="ot7"/>
-                                                </af:column>
-                                            </af:table>
-                                        </af:panelGroupLayout>
+                                        <af:table value="#{bindings.CapEmpFromCargo1.collectionModel}" var="row"
+                                                  rows="#{bindings.CapEmpFromCargo1.rangeSize}"
+                                                  emptyText="#{bindings.CapEmpFromCargo1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  fetchSize="#{bindings.CapEmpFromCargo1.rangeSize}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.CapEmpFromCargo1.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.CapEmpFromCargo1.collectionModel.makeCurrent}"
+                                                  rowSelection="single" id="t1" partialTriggers="::cb2">
+                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Rut.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Rut.label}"
+                                                       id="c1">
+                                                <af:outputText value="#{row.Rut}" id="ot1"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Nombre.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Nombre.label}"
+                                                       id="c2">
+                                                <af:outputText value="#{row.Nombre}" id="ot2"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.label}"
+                                                       id="c3">
+                                                <af:outputText value="#{row.Nombrecargo}" id="ot3"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Fechainicio.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Fechainicio.label}"
+                                                       id="c4">
+                                                <af:outputText value="#{row.Fechainicio}" id="ot4">
+                                                    <af:convertDateTime pattern="#{bindings.CapEmpFromCargo1.hints.Fechainicio.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Fechatermino.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Fechatermino.label}"
+                                                       id="c5">
+                                                <af:outputText value="#{row.Fechatermino}" id="ot5">
+                                                    <af:convertDateTime pattern="#{bindings.CapEmpFromCargo1.hints.Fechatermino.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Horainicio.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Horainicio.label}"
+                                                       id="c6">
+                                                <af:outputText value="#{row.Horainicio}" id="ot6"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Horatermino.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Horatermino.label}"
+                                                       id="c7">
+                                                <af:outputText value="#{row.Horatermino}" id="ot7"/>
+                                            </af:column>
+                                        </af:table>
                                     </f:facet>
                                     <f:facet name="second">
                                         <af:panelGroupLayout layout="scroll" id="pgl4">
