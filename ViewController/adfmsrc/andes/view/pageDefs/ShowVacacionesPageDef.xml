@@ -7,7 +7,7 @@
     <searchRegion Criteria="VacEmpFromCargoCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="VacEmpFromCargo1Iterator" id="VacEmpFromCargoCriteriaQuery"/>
     <iterator Binds="VacacionesView1" RangeSize="25" DataControl="andesDBDataControl" id="VacacionesView1Iterator"/>
-    <invokeAction id="invokeCreateInsert" Binds="CreateInsert" Refresh="prepareModel"/>
+    <invokeAction id="invokeCreateInsert" Binds="CreateInsert" Refresh="renderModelIfNeeded"/>
   </executables>
   <bindings>
     <tree IterBinding="VacEmpFromCargo1Iterator" id="VacEmpFromCargo1">

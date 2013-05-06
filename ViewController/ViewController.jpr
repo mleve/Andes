@@ -72,6 +72,7 @@
             <hash>
                <list n="pattern-filters">
                   <string v="+header.jpg"/>
+                  <string v="+header.jpg"/>
                </list>
                <list n="url-path">
                   <url path="../../../../Users/mario/Documents/GitHub/cargaJSP/JspPruebas/ViewController/public_html/resources/images/"/>
@@ -200,6 +201,15 @@
       <value n="j2eeWebAppName" v="Andes-ViewController-webapp"/>
       <value n="j2eeWebContextRoot" v="Andes-ViewController-context-root"/>
    </hash>
+   <hash n="oracle.jdeveloper.runner.RunConfigurations">
+      <hash n="runConfigurationDefinitions">
+         <hash n="Default">
+            <value n="custom" v="false"/>
+            <value n="name" v="Default"/>
+            <url n="targetURL" path="public_html/ShowCaps.jsf"/>
+         </hash>
+      </hash>
+   </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
          <hash>
@@ -280,6 +290,10 @@
          </hash>
          <hash>
             <value n="id" v="ADF Faces Databinding Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Digester 1.8"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -390,6 +404,10 @@
          </hash>
          <hash>
             <value n="id" v="ADF Faces Databinding Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Digester 1.8"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>

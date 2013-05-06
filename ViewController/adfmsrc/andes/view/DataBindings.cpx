@@ -5,11 +5,13 @@
     <page path="/untitled1.jsf" usageId="andes_view_untitled1PageDef"/>
     <page path="/ShowVacaciones.jsf" usageId="andes_view_ShowVacacionesPageDef"/>
     <page path="/ShowCaps.jsf" usageId="andes_view_ShowCapsPageDef"/>
+    <page path="/newVacsForm.jsff" usageId="andes_view_newVacsFormPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="andes_view_untitled1PageDef" path="andes.view.pageDefs.untitled1PageDef"/>
     <page id="andes_view_ShowVacacionesPageDef" path="andes.view.pageDefs.ShowVacacionesPageDef"/>
     <page id="andes_view_ShowCapsPageDef" path="andes.view.pageDefs.ShowCapsPageDef"/>
+    <page id="andes_view_newVacsFormPageDef" path="andes.view.pageDefs.newVacsFormPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="andesDBDataControl" Package="andes.model.vo"

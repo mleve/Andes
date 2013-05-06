@@ -9,7 +9,7 @@
                   Binds="CapEmpFromCargo1Iterator" id="CapEmpFromCargoCriteriaQuery"/>
     <iterator Binds="CapacitacionesView1" RangeSize="25" DataControl="andesDBDataControl"
               id="CapacitacionesView1Iterator"/>
-    <invokeAction id="invokeCreateInsert" Binds="CreateInsert" Refresh="prepareModel"/>
+    <invokeAction id="invokeCreateInsert" Binds="CreateInsert" Refresh="renderModelIfNeeded"/>
   </executables>
   <bindings>
     <tree IterBinding="CapEmpFromCargo1Iterator" id="CapEmpFromCargo1">
