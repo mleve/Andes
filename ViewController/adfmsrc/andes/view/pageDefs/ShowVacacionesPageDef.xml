@@ -6,8 +6,6 @@
     <iterator Binds="VacEmpFromCargo1" RangeSize="25" DataControl="andesDBDataControl" id="VacEmpFromCargo1Iterator"/>
     <searchRegion Criteria="VacEmpFromCargoCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="VacEmpFromCargo1Iterator" id="VacEmpFromCargoCriteriaQuery"/>
-    <iterator Binds="VacacionesView1" RangeSize="25" DataControl="andesDBDataControl" id="VacacionesView1Iterator"/>
-    <invokeAction id="invokeCreateInsert" Binds="CreateInsert" Refresh="renderModelIfNeeded"/>
   </executables>
   <bindings>
     <tree IterBinding="VacEmpFromCargo1Iterator" id="VacEmpFromCargo1">
@@ -21,24 +19,20 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="VacacionesView1Iterator" id="Rut">
-      <AttrNames>
-        <Item Value="Rut"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="VacacionesView1Iterator" id="Fechainicio">
+    <list IterBinding="VacEmpFromCargo1Iterator" StaticList="false" Uses="LOV_Rut1" id="Rut1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="VacEmpFromCargo1Iterator" id="Fechainicio">
       <AttrNames>
         <Item Value="Fechainicio"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="VacacionesView1Iterator" id="Fechatermino">
+    <attributeValues IterBinding="VacEmpFromCargo1Iterator" id="Fechatermino">
       <AttrNames>
         <Item Value="Fechatermino"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="VacacionesView1Iterator" StaticList="false" Uses="LOV_Rut" id="Rut1" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <action IterBinding="VacacionesView1Iterator" id="CreateInsert" InstanceName="andesDBDataControl.VacacionesView1"
-            DataControl="andesDBDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="VacEmpFromCargo1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="andesDBDataControl"/>
   </bindings>
 </pageDefinition>

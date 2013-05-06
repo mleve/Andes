@@ -72,6 +72,10 @@
     Name="CargosView1"
     ViewObjectName="andes.model.vo.CargosView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="EmpleadosView1"
+    ViewObjectName="andes.model.vo.EmpleadosView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Idcargo"
     ListVOName="CargosView1"
@@ -86,6 +90,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Nombrecargo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Rut1"
+    ListVOName="EmpleadosView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Rut1"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Rut"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Rut"/>
+      <Item Value="Nombre"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -200,7 +222,15 @@
     PrecisionRule="true"
     EntityAttrName="Rut"
     EntityUsage="Vacaciones"
-    AliasName="RUT1"/>
+    AliasName="RUT1"
+    LOVName="LOV_Rut1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="VacEmpFromCargoCriteria"
     ViewObjectName="andes.model.vo.VacEmpFromCargo"

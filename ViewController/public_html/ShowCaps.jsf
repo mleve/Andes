@@ -21,157 +21,127 @@
                         <f:facet name="second">
                             <af:panelGroupLayout layout="scroll" id="pgl2">
                                 <af:panelSplitter id="ps2"
-                                                  disabled="true" splitterPosition="818" styleClass="AFStretchWidth">
+                                                  disabled="true" splitterPosition="759" styleClass="AFStretchWidth">
                                     <f:facet name="first">
-                                        <af:table value="#{bindings.CapEmpFromCargo1.collectionModel}" var="row"
-                                                  rows="#{bindings.CapEmpFromCargo1.rangeSize}"
-                                                  emptyText="#{bindings.CapEmpFromCargo1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                                  fetchSize="#{bindings.CapEmpFromCargo1.rangeSize}"
-                                                  rowBandingInterval="0" id="t1">
-                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Rut.name}"
-                                                       sortable="false"
-                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Rut.label}"
-                                                       id="c1" width="120">
-                                                <af:inputText value="#{row.bindings.Rut.inputValue}"
-                                                              label="#{bindings.CapEmpFromCargo1.hints.Rut.label}"
-                                                              required="#{bindings.CapEmpFromCargo1.hints.Rut.mandatory}"
-                                                              columns="#{bindings.CapEmpFromCargo1.hints.Rut.displayWidth}"
-                                                              maximumLength="#{bindings.CapEmpFromCargo1.hints.Rut.precision}"
-                                                              shortDesc="#{bindings.CapEmpFromCargo1.hints.Rut.tooltip}"
-                                                              id="it1">
-                                                    <f:validator binding="#{row.bindings.Rut.validator}"/>
-                                                </af:inputText>
-                                            </af:column>
-                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Nombre.name}"
-                                                       sortable="false"
-                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Nombre.label}"
-                                                       id="c2" width="184">
-                                                <af:inputText value="#{row.bindings.Nombre.inputValue}"
-                                                              label="#{bindings.CapEmpFromCargo1.hints.Nombre.label}"
-                                                              required="#{bindings.CapEmpFromCargo1.hints.Nombre.mandatory}"
-                                                              columns="#{bindings.CapEmpFromCargo1.hints.Nombre.displayWidth}"
-                                                              maximumLength="#{bindings.CapEmpFromCargo1.hints.Nombre.precision}"
-                                                              shortDesc="#{bindings.CapEmpFromCargo1.hints.Nombre.tooltip}"
-                                                              id="it2">
-                                                    <f:validator binding="#{row.bindings.Nombre.validator}"/>
-                                                </af:inputText>
-                                            </af:column>
-                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.name}"
-                                                       sortable="false"
-                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.label}"
-                                                       id="c3" width="70">
-                                                <af:inputText value="#{row.bindings.Nombrecargo.inputValue}"
-                                                              label="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.label}"
-                                                              required="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.mandatory}"
-                                                              columns="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.displayWidth}"
-                                                              maximumLength="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.precision}"
-                                                              shortDesc="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.tooltip}"
-                                                              id="it3">
-                                                    <f:validator binding="#{row.bindings.Nombrecargo.validator}"/>
-                                                </af:inputText>
-                                            </af:column>
-                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Fechainicio.name}"
-                                                       sortable="false"
-                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Fechainicio.label}"
-                                                       id="c4" width="106">
-                                                <af:inputDate value="#{row.bindings.Fechainicio.inputValue}"
-                                                              label="#{bindings.CapEmpFromCargo1.hints.Fechainicio.label}"
-                                                              required="#{bindings.CapEmpFromCargo1.hints.Fechainicio.mandatory}"
-                                                              columns="#{bindings.CapEmpFromCargo1.hints.Fechainicio.displayWidth}"
-                                                              shortDesc="#{bindings.CapEmpFromCargo1.hints.Fechainicio.tooltip}"
-                                                              id="id1">
-                                                    <f:validator binding="#{row.bindings.Fechainicio.validator}"/>
-                                                    <af:convertDateTime pattern="#{bindings.CapEmpFromCargo1.hints.Fechainicio.format}"/>
-                                                </af:inputDate>
-                                            </af:column>
-                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Fechatermino.name}"
-                                                       sortable="false"
-                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Fechatermino.label}"
-                                                       id="c5" width="120">
-                                                <af:inputDate value="#{row.bindings.Fechatermino.inputValue}"
-                                                              label="#{bindings.CapEmpFromCargo1.hints.Fechatermino.label}"
-                                                              required="#{bindings.CapEmpFromCargo1.hints.Fechatermino.mandatory}"
-                                                              columns="#{bindings.CapEmpFromCargo1.hints.Fechatermino.displayWidth}"
-                                                              shortDesc="#{bindings.CapEmpFromCargo1.hints.Fechatermino.tooltip}"
-                                                              id="id2">
-                                                    <f:validator binding="#{row.bindings.Fechatermino.validator}"/>
-                                                    <af:convertDateTime pattern="#{bindings.CapEmpFromCargo1.hints.Fechatermino.format}"/>
-                                                </af:inputDate>
-                                            </af:column>
-                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Horainicio.name}"
-                                                       sortable="false"
-                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Horainicio.label}"
-                                                       id="c6" width="120">
-                                                <af:inputText value="#{row.bindings.Horainicio.inputValue}"
-                                                              label="#{bindings.CapEmpFromCargo1.hints.Horainicio.label}"
-                                                              required="#{bindings.CapEmpFromCargo1.hints.Horainicio.mandatory}"
-                                                              columns="#{bindings.CapEmpFromCargo1.hints.Horainicio.displayWidth}"
-                                                              maximumLength="#{bindings.CapEmpFromCargo1.hints.Horainicio.precision}"
-                                                              shortDesc="#{bindings.CapEmpFromCargo1.hints.Horainicio.tooltip}"
-                                                              id="it4">
-                                                    <f:validator binding="#{row.bindings.Horainicio.validator}"/>
-                                                </af:inputText>
-                                            </af:column>
-                                            <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Horatermino.name}"
-                                                       sortable="false"
-                                                       headerText="#{bindings.CapEmpFromCargo1.hints.Horatermino.label}"
-                                                       id="c7" width="98">
-                                                <af:inputText value="#{row.bindings.Horatermino.inputValue}"
-                                                              label="#{bindings.CapEmpFromCargo1.hints.Horatermino.label}"
-                                                              required="#{bindings.CapEmpFromCargo1.hints.Horatermino.mandatory}"
-                                                              columns="#{bindings.CapEmpFromCargo1.hints.Horatermino.displayWidth}"
-                                                              maximumLength="#{bindings.CapEmpFromCargo1.hints.Horatermino.precision}"
-                                                              shortDesc="#{bindings.CapEmpFromCargo1.hints.Horatermino.tooltip}"
-                                                              id="it5">
-                                                    <f:validator binding="#{row.bindings.Horatermino.validator}"/>
-                                                </af:inputText>
-                                            </af:column>
-                                        </af:table>
+                                        <af:panelGroupLayout layout="scroll" id="pgl5" inlineStyle="width:100%;">
+                                            <af:table value="#{bindings.CapEmpFromCargo1.collectionModel}" var="row"
+                                                      rows="#{bindings.CapEmpFromCargo1.rangeSize}"
+                                                      emptyText="#{bindings.CapEmpFromCargo1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                      fetchSize="#{bindings.CapEmpFromCargo1.rangeSize}"
+                                                      rowBandingInterval="0"
+                                                      selectedRowKeys="#{bindings.CapEmpFromCargo1.collectionModel.selectedRow}"
+                                                      selectionListener="#{bindings.CapEmpFromCargo1.collectionModel.makeCurrent}"
+                                                      rowSelection="single" id="t1" partialTriggers="::cb2"
+                                                      inlineStyle="width:100%;">
+                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Rut.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Rut.label}"
+                                                           id="c1">
+                                                    <af:outputText value="#{row.Rut}" id="ot1"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Nombre.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Nombre.label}"
+                                                           id="c2">
+                                                    <af:outputText value="#{row.Nombre}" id="ot2"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Nombrecargo.label}"
+                                                           id="c3">
+                                                    <af:outputText value="#{row.Nombrecargo}" id="ot3"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Fechainicio.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Fechainicio.label}"
+                                                           id="c4">
+                                                    <af:outputText value="#{row.Fechainicio}" id="ot4">
+                                                        <af:convertDateTime pattern="#{bindings.CapEmpFromCargo1.hints.Fechainicio.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Fechatermino.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Fechatermino.label}"
+                                                           id="c5">
+                                                    <af:outputText value="#{row.Fechatermino}" id="ot5">
+                                                        <af:convertDateTime pattern="#{bindings.CapEmpFromCargo1.hints.Fechatermino.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Horainicio.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Horainicio.label}"
+                                                           id="c6">
+                                                    <af:outputText value="#{row.Horainicio}" id="ot6"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.CapEmpFromCargo1.hints.Horatermino.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.CapEmpFromCargo1.hints.Horatermino.label}"
+                                                           id="c7">
+                                                    <af:outputText value="#{row.Horatermino}" id="ot7"/>
+                                                </af:column>
+                                            </af:table>
+                                        </af:panelGroupLayout>
                                     </f:facet>
                                     <f:facet name="second">
-                                        <af:panelFormLayout id="pfl1">
-                                            <af:selectOneChoice value="#{bindings.Rut1.inputValue}"
-                                                                label="#{bindings.Rut1.label}"
-                                                                required="#{bindings.Rut1.hints.mandatory}"
-                                                                shortDesc="#{bindings.Rut1.hints.tooltip}" id="soc1">
-                                                <f:selectItems value="#{bindings.Rut1.items}" id="si1"/>
-                                            </af:selectOneChoice>
-                                            <af:inputDate value="#{bindings.Fechainicio.inputValue}"
-                                                          label="#{bindings.Fechainicio.hints.label}"
-                                                          required="#{bindings.Fechainicio.hints.mandatory}"
-                                                          columns="#{bindings.Fechainicio.hints.displayWidth}"
-                                                          shortDesc="#{bindings.Fechainicio.hints.tooltip}" id="id3">
-                                                <f:validator binding="#{bindings.Fechainicio.validator}"/>
-                                                <af:convertDateTime pattern="#{bindings.Fechainicio.format}"/>
-                                            </af:inputDate>
-                                            <af:inputDate value="#{bindings.Fechatermino.inputValue}"
-                                                          label="#{bindings.Fechatermino.hints.label}"
-                                                          required="#{bindings.Fechatermino.hints.mandatory}"
-                                                          columns="#{bindings.Fechatermino.hints.displayWidth}"
-                                                          shortDesc="#{bindings.Fechatermino.hints.tooltip}" id="id4">
-                                                <f:validator binding="#{bindings.Fechatermino.validator}"/>
-                                                <af:convertDateTime pattern="#{bindings.Fechatermino.format}"/>
-                                            </af:inputDate>
-                                            <af:inputText value="#{bindings.Horainicio.inputValue}"
-                                                          label="#{bindings.Horainicio.hints.label}"
-                                                          required="#{bindings.Horainicio.hints.mandatory}"
-                                                          columns="#{bindings.Horainicio.hints.displayWidth}"
-                                                          maximumLength="#{bindings.Horainicio.hints.precision}"
-                                                          shortDesc="#{bindings.Horainicio.hints.tooltip}" id="it6">
-                                                <f:validator binding="#{bindings.Horainicio.validator}"/>
-                                            </af:inputText>
-                                            <af:inputText value="#{bindings.Horatermino.inputValue}"
-                                                          label="#{bindings.Horatermino.hints.label}"
-                                                          required="#{bindings.Horatermino.hints.mandatory}"
-                                                          columns="#{bindings.Horatermino.hints.displayWidth}"
-                                                          maximumLength="#{bindings.Horatermino.hints.precision}"
-                                                          shortDesc="#{bindings.Horatermino.hints.tooltip}" id="it7">
-                                                <f:validator binding="#{bindings.Horatermino.validator}"/>
-                                            </af:inputText>
-                                            <f:facet name="footer">
-                                                <af:commandButton text="Submit" id="cb1"/>
-                                            </f:facet>
-                                        </af:panelFormLayout>
+                                        <af:panelGroupLayout layout="scroll" id="pgl4">
+                                            <af:panelGroupLayout id="pgl3">
+                                                <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+                                                                  text="Nuevo registro"
+                                                                  disabled="#{!bindings.CreateInsert.enabled}"
+                                                                  id="cb2"/>
+                                                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                                                  text="Confirmar cambios" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="cb3"/>
+                                            </af:panelGroupLayout>
+                                            <af:panelFormLayout id="pfl1">
+                                                <af:selectOneChoice value="#{bindings.Rut1.inputValue}"
+                                                                    label="Empleado "
+                                                                    required="#{bindings.Rut1.hints.mandatory}"
+                                                                    shortDesc="#{bindings.Rut1.hints.tooltip}"
+                                                                    id="soc1">
+                                                    <f:selectItems value="#{bindings.Rut1.items}" id="si1"/>
+                                                </af:selectOneChoice>
+                                                <af:inputDate value="#{bindings.Fechainicio1.inputValue}"
+                                                              label="#{bindings.Fechainicio1.hints.label}"
+                                                              required="#{bindings.Fechainicio1.hints.mandatory}"
+                                                              columns="#{bindings.Fechainicio1.hints.displayWidth}"
+                                                              shortDesc="#{bindings.Fechainicio1.hints.tooltip}"
+                                                              id="id3">
+                                                    <f:validator binding="#{bindings.Fechainicio1.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.Fechainicio1.format}"/>
+                                                </af:inputDate>
+                                                <af:inputDate value="#{bindings.Fechatermino1.inputValue}"
+                                                              label="#{bindings.Fechatermino1.hints.label}"
+                                                              required="#{bindings.Fechatermino1.hints.mandatory}"
+                                                              columns="#{bindings.Fechatermino1.hints.displayWidth}"
+                                                              shortDesc="#{bindings.Fechatermino1.hints.tooltip}"
+                                                              id="id4">
+                                                    <f:validator binding="#{bindings.Fechatermino1.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.Fechatermino1.format}"/>
+                                                </af:inputDate>
+                                                <af:inputText value="#{bindings.Horainicio1.inputValue}"
+                                                              label="#{bindings.Horainicio1.hints.label}"
+                                                              required="#{bindings.Horainicio1.hints.mandatory}"
+                                                              columns="#{bindings.Horainicio1.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Horainicio1.hints.precision}"
+                                                              shortDesc="#{bindings.Horainicio1.hints.tooltip}"
+                                                              id="it6">
+                                                    <f:validator binding="#{bindings.Horainicio1.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.Horatermino1.inputValue}"
+                                                              label="#{bindings.Horatermino1.hints.label}"
+                                                              required="#{bindings.Horatermino1.hints.mandatory}"
+                                                              columns="#{bindings.Horatermino1.hints.displayWidth}"
+                                                              maximumLength="#{bindings.Horatermino1.hints.precision}"
+                                                              shortDesc="#{bindings.Horatermino1.hints.tooltip}"
+                                                              id="it7">
+                                                    <f:validator binding="#{bindings.Horatermino1.validator}"/>
+                                                </af:inputText>
+                                                <f:facet name="footer">
+                                                    <af:commandButton text="Aceptar" id="cb1"/>
+                                                </f:facet>
+                                            </af:panelFormLayout>
+                                        </af:panelGroupLayout>
                                     </f:facet>
                                 </af:panelSplitter>
                             </af:panelGroupLayout>

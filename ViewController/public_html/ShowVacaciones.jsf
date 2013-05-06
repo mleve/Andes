@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
     <af:document title="ShowVacaciones.jsf" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
@@ -21,96 +22,69 @@
                         </f:facet>
                         <f:facet name="second">
                             <af:panelGroupLayout layout="scroll" id="pgl2">
-                                <af:panelSplitter id="ps2" inlineStyle="width:959px;" splitterPosition="575"
+                                <af:panelSplitter id="ps2" inlineStyle="width:100%;" splitterPosition="575"
                                                   disabled="true">
                                     <f:facet name="first">
                                         <af:table value="#{bindings.VacEmpFromCargo1.collectionModel}" var="row"
                                                   rows="#{bindings.VacEmpFromCargo1.rangeSize}"
                                                   emptyText="#{bindings.VacEmpFromCargo1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                                   fetchSize="#{bindings.VacEmpFromCargo1.rangeSize}"
-                                                  rowBandingInterval="0" id="t1" inlineStyle="width:550px;">
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.VacEmpFromCargo1.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.VacEmpFromCargo1.collectionModel.makeCurrent}"
+                                                  rowSelection="single" id="t1" partialTriggers="::cb2 ::cb3">
                                             <af:column sortProperty="#{bindings.VacEmpFromCargo1.hints.Rut.name}"
                                                        sortable="true"
-                                                       headerText="#{bindings.VacEmpFromCargo1.hints.Rut.label}" id="c1"
-                                                       width="105">
-                                                <af:inputText value="#{row.bindings.Rut.inputValue}"
-                                                              label="#{bindings.VacEmpFromCargo1.hints.Rut.label}"
-                                                              required="#{bindings.VacEmpFromCargo1.hints.Rut.mandatory}"
-                                                              columns="#{bindings.VacEmpFromCargo1.hints.Rut.displayWidth}"
-                                                              maximumLength="#{bindings.VacEmpFromCargo1.hints.Rut.precision}"
-                                                              shortDesc="#{bindings.VacEmpFromCargo1.hints.Rut.tooltip}"
-                                                              id="it1">
-                                                    <f:validator binding="#{row.bindings.Rut.validator}"/>
-                                                </af:inputText>
+                                                       headerText="#{bindings.VacEmpFromCargo1.hints.Rut.label}"
+                                                       id="c1">
+                                                <af:outputText value="#{row.Rut}" id="ot1"/>
                                             </af:column>
                                             <af:column sortProperty="#{bindings.VacEmpFromCargo1.hints.Nombre.name}"
                                                        sortable="true"
                                                        headerText="#{bindings.VacEmpFromCargo1.hints.Nombre.label}"
-                                                       id="c2" width="105">
-                                                <af:inputText value="#{row.bindings.Nombre.inputValue}"
-                                                              label="#{bindings.VacEmpFromCargo1.hints.Nombre.label}"
-                                                              required="#{bindings.VacEmpFromCargo1.hints.Nombre.mandatory}"
-                                                              columns="#{bindings.VacEmpFromCargo1.hints.Nombre.displayWidth}"
-                                                              maximumLength="#{bindings.VacEmpFromCargo1.hints.Nombre.precision}"
-                                                              shortDesc="#{bindings.VacEmpFromCargo1.hints.Nombre.tooltip}"
-                                                              id="it2">
-                                                    <f:validator binding="#{row.bindings.Nombre.validator}"/>
-                                                </af:inputText>
+                                                       id="c2">
+                                                <af:outputText value="#{row.Nombre}" id="ot2"/>
                                             </af:column>
                                             <af:column sortProperty="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.name}"
                                                        sortable="true"
                                                        headerText="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.label}"
-                                                       id="c3" width="105">
-                                                <af:inputText value="#{row.bindings.Nombrecargo.inputValue}"
-                                                              label="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.label}"
-                                                              required="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.mandatory}"
-                                                              columns="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.displayWidth}"
-                                                              maximumLength="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.precision}"
-                                                              shortDesc="#{bindings.VacEmpFromCargo1.hints.Nombrecargo.tooltip}"
-                                                              id="it3">
-                                                    <f:validator binding="#{row.bindings.Nombrecargo.validator}"/>
-                                                </af:inputText>
+                                                       id="c3">
+                                                <af:outputText value="#{row.Nombrecargo}" id="ot3"/>
                                             </af:column>
                                             <af:column sortProperty="#{bindings.VacEmpFromCargo1.hints.Fechainicio.name}"
                                                        sortable="true"
                                                        headerText="#{bindings.VacEmpFromCargo1.hints.Fechainicio.label}"
-                                                       id="c4" width="105">
-                                                <af:inputDate value="#{row.bindings.Fechainicio.inputValue}"
-                                                              label="#{bindings.VacEmpFromCargo1.hints.Fechainicio.label}"
-                                                              required="#{bindings.VacEmpFromCargo1.hints.Fechainicio.mandatory}"
-                                                              columns="#{bindings.VacEmpFromCargo1.hints.Fechainicio.displayWidth}"
-                                                              shortDesc="#{bindings.VacEmpFromCargo1.hints.Fechainicio.tooltip}"
-                                                              id="id1">
-                                                    <f:validator binding="#{row.bindings.Fechainicio.validator}"/>
+                                                       id="c4">
+                                                <af:outputText value="#{row.Fechainicio}" id="ot4">
                                                     <af:convertDateTime pattern="#{bindings.VacEmpFromCargo1.hints.Fechainicio.format}"/>
-                                                </af:inputDate>
+                                                </af:outputText>
                                             </af:column>
                                             <af:column sortProperty="#{bindings.VacEmpFromCargo1.hints.Fechatermino.name}"
                                                        sortable="true"
                                                        headerText="#{bindings.VacEmpFromCargo1.hints.Fechatermino.label}"
-                                                       id="c5" width="107">
-                                                <af:inputDate value="#{row.bindings.Fechatermino.inputValue}"
-                                                              label="#{bindings.VacEmpFromCargo1.hints.Fechatermino.label}"
-                                                              required="#{bindings.VacEmpFromCargo1.hints.Fechatermino.mandatory}"
-                                                              columns="#{bindings.VacEmpFromCargo1.hints.Fechatermino.displayWidth}"
-                                                              shortDesc="#{bindings.VacEmpFromCargo1.hints.Fechatermino.tooltip}"
-                                                              id="id2">
-                                                    <f:validator binding="#{row.bindings.Fechatermino.validator}"/>
+                                                       id="c5">
+                                                <af:outputText value="#{row.Fechatermino}" id="ot5">
                                                     <af:convertDateTime pattern="#{bindings.VacEmpFromCargo1.hints.Fechatermino.format}"/>
-                                                </af:inputDate>
+                                                </af:outputText>
                                             </af:column>
                                         </af:table>
                                     </f:facet>
                                     <f:facet name="second">
                                         <af:panelGroupLayout layout="scroll" id="pgl3">
-                                            <af:outputText value="Nuevo registro" id="ot1"
-                                                           inlineStyle="margin:0px;"/>
+                                            <af:panelGroupLayout id="pgl4">
+                                                <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+                                                                  text="Nuevo registro"
+                                                                  disabled="#{!bindings.CreateInsert.enabled}"
+                                                                  id="cb2"/>
+                                                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                                                  text="Confirmar cambios" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="cb3"/>
+                                            </af:panelGroupLayout>
                                             <af:panelFormLayout id="pfl1">
-                                                <af:selectOneChoice value="#{bindings.Rut1.inputValue}"
-                                                                    label="#{bindings.Rut1.label}"
+                                                <af:selectOneChoice value="#{bindings.Rut1.inputValue}" label="Empleado"
                                                                     required="#{bindings.Rut1.hints.mandatory}"
                                                                     shortDesc="#{bindings.Rut1.hints.tooltip}"
-                                                                    id="soc1">
+                                                                    id="soc1" showRequired="true">
                                                     <f:selectItems value="#{bindings.Rut1.items}" id="si1"/>
                                                 </af:selectOneChoice>
                                                 <af:inputDate value="#{bindings.Fechainicio.inputValue}"
@@ -118,7 +92,7 @@
                                                               required="#{bindings.Fechainicio.hints.mandatory}"
                                                               columns="#{bindings.Fechainicio.hints.displayWidth}"
                                                               shortDesc="#{bindings.Fechainicio.hints.tooltip}"
-                                                              id="id3">
+                                                              id="id1" showRequired="true">
                                                     <f:validator binding="#{bindings.Fechainicio.validator}"/>
                                                     <af:convertDateTime pattern="#{bindings.Fechainicio.format}"/>
                                                 </af:inputDate>
@@ -127,12 +101,12 @@
                                                               required="#{bindings.Fechatermino.hints.mandatory}"
                                                               columns="#{bindings.Fechatermino.hints.displayWidth}"
                                                               shortDesc="#{bindings.Fechatermino.hints.tooltip}"
-                                                              id="id4">
+                                                              id="id2" showRequired="true">
                                                     <f:validator binding="#{bindings.Fechatermino.validator}"/>
                                                     <af:convertDateTime pattern="#{bindings.Fechatermino.format}"/>
                                                 </af:inputDate>
                                                 <f:facet name="footer">
-                                                    <af:commandButton text="Crear" id="cb1"/>
+                                                    <af:commandButton text="Aceptar" id="cb1"/>
                                                 </f:facet>
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>

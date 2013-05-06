@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="vacaciones-flow">
+    <default-activity>CreateInsert</default-activity>
+    <view id="newVacsForm">
+      <page>/newVacsForm.jsff</page>
+    </view>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome>
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__3">
+      <from-activity-id>CreateInsert</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>CreateInsert</from-outcome>
+        <to-activity-id>newVacsForm</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>

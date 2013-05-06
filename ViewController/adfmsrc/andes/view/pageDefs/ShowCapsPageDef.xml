@@ -7,11 +7,30 @@
     <iterator Binds="CapEmpFromCargo1" RangeSize="25" DataControl="andesDBDataControl" id="CapEmpFromCargo1Iterator"/>
     <searchRegion Criteria="CapEmpFromCargoCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="CapEmpFromCargo1Iterator" id="CapEmpFromCargoCriteriaQuery"/>
-    <iterator Binds="CapacitacionesView1" RangeSize="25" DataControl="andesDBDataControl"
-              id="CapacitacionesView1Iterator"/>
-    <invokeAction id="invokeCreateInsert" Binds="CreateInsert" Refresh="renderModelIfNeeded"/>
   </executables>
   <bindings>
+    <list IterBinding="CapEmpFromCargo1Iterator" StaticList="false" Uses="LOV_Rut1" id="Rut1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CapEmpFromCargo1Iterator" id="Fechainicio1">
+      <AttrNames>
+        <Item Value="Fechainicio"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CapEmpFromCargo1Iterator" id="Fechatermino1">
+      <AttrNames>
+        <Item Value="Fechatermino"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CapEmpFromCargo1Iterator" id="Horainicio1">
+      <AttrNames>
+        <Item Value="Horainicio"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CapEmpFromCargo1Iterator" id="Horatermino1">
+      <AttrNames>
+        <Item Value="Horatermino"/>
+      </AttrNames>
+    </attributeValues>
     <tree IterBinding="CapEmpFromCargo1Iterator" id="CapEmpFromCargo1">
       <nodeDefinition DefName="andes.model.vo.CapEmpFromCargo" Name="CapEmpFromCargo10">
         <AttrNames>
@@ -25,35 +44,8 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="CapacitacionesView1Iterator" id="Rut">
-      <AttrNames>
-        <Item Value="Rut"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="CapacitacionesView1Iterator" id="Fechainicio">
-      <AttrNames>
-        <Item Value="Fechainicio"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="CapacitacionesView1Iterator" id="Fechatermino">
-      <AttrNames>
-        <Item Value="Fechatermino"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="CapacitacionesView1Iterator" id="Horainicio">
-      <AttrNames>
-        <Item Value="Horainicio"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="CapacitacionesView1Iterator" id="Horatermino">
-      <AttrNames>
-        <Item Value="Horatermino"/>
-      </AttrNames>
-    </attributeValues>
-    <action IterBinding="CapacitacionesView1Iterator" id="CreateInsert"
-            InstanceName="andesDBDataControl.CapacitacionesView1" DataControl="andesDBDataControl"
-            RequiresUpdateModel="true" Action="createInsertRow"/>
-    <list IterBinding="CapacitacionesView1Iterator" StaticList="false" Uses="LOV_Rut" id="Rut1" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
+    <action IterBinding="CapEmpFromCargo1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="andesDBDataControl"/>
   </bindings>
 </pageDefinition>

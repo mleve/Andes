@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.62.76" id="DataBindings"
              SeparateXMLFiles="false" Package="andes.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
   <pageMap>
     <page path="/untitled1.jsf" usageId="andes_view_untitled1PageDef"/>
     <page path="/ShowVacaciones.jsf" usageId="andes_view_ShowVacacionesPageDef"/>
     <page path="/ShowCaps.jsf" usageId="andes_view_ShowCapsPageDef"/>
     <page path="/newVacsForm.jsff" usageId="andes_view_newVacsFormPageDef"/>
+    <page path="/WEB-INF/vacaciones-flow.xml#vacaciones-flow@CreateInsert"
+          usageId="andes_view_vacaciones_flow_vacaciones_flow_CreateInsertPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="andes_view_untitled1PageDef" path="andes.view.pageDefs.untitled1PageDef"/>
     <page id="andes_view_ShowVacacionesPageDef" path="andes.view.pageDefs.ShowVacacionesPageDef"/>
     <page id="andes_view_ShowCapsPageDef" path="andes.view.pageDefs.ShowCapsPageDef"/>
     <page id="andes_view_newVacsFormPageDef" path="andes.view.pageDefs.newVacsFormPageDef"/>
+    <page id="andes_view_vacaciones_flow_vacaciones_flow_CreateInsertPageDef"
+          path="andes.view.pageDefs.vacaciones_flow_vacaciones_flow_CreateInsertPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="andesDBDataControl" Package="andes.model.vo"

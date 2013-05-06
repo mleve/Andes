@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.62.76"
+                id="vacaciones_flow_vacaciones_flow_CreateInsertPageDef" Package="andes.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="VacacionesView1" RangeSize="25" DataControl="andesDBDataControl" id="VacacionesView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="VacacionesView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

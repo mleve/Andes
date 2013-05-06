@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
    <AppModuleConfigBag ApplicationName="andes.model.vo.andesDB">
-      <AppModuleConfig name="13E66D0D9A2" DBconnection="java:comp/env/jdbc/devDS" ApplicationName="andes.model.vo.andesDB" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" JDBCName="dev" BC4JConfigName="andesDBLocal" jbo.project="andes.model.Model">
+      <AppModuleConfig name="13E7B6F0CFB" DBconnection="java:comp/env/jdbc/devDS" ApplicationName="andes.model.vo.andesDB" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" JDBCName="dev" BC4JConfigName="andesDBLocal" jbo.project="andes.model.Model">
          <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle"/>
          <Security AppModuleJndiName="andes.model.vo.andesDB"/>
          <Tester FullProxyInterfaceName="andes.model.vo.common.andesDB"/>
