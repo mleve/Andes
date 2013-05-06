@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View3">
+      <property
+         name="activityId">ShowCaps</property>
+      <property
+         name="page">/ShowCaps.jsf</property>
+      <property
+         name="thumbnailExpanded">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ShowCaps&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">305.09766</property>
+      <property
+         name="x">-18.5</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">ShowVacaciones</property>
+      <property
+         name="page">/ShowVacaciones.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ShowVacaciones&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">281.79883</property>
+      <property
+         name="x">424.02832</property>
+   </View>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule5">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">63.689453</property>
+      <property
+         name="x">50.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="WildcardControlFlowRule5"
+      to="View3">
+      <property
+         name="fromOutcome">adfMenu_ShowCaps</property>
+      <property
+         name="sdm:polyPoints">B50,50.0,106.33887,-18.5,250.74707,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="WildcardControlFlowRule5"
+      to="View4">
+      <property
+         name="fromOutcome">adfMenu_ShowVacaciones</property>
+      <property
+         name="sdm:polyPoints">R50,86.0,63.838867,383.02832,281.44824,L50</property>
+   </ControlFlowCase>
+</SDM>
