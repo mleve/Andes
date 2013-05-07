@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <view id="ShowCaps">
+    <display-name>Capacitaciones</display-name>
     <page>/ShowCaps.jsf</page>
     <redirect/>
   </view>
   <view id="ShowVacaciones">
+    <display-name>Vacaciones</display-name>
     <page>/ShowVacaciones.jsf</page>
     <redirect/>
+  </view>
+  <view id="mainMenu">
+    <description>Menu Principal</description>
+    <display-name>Menu</display-name>
+    <page>/mainMenu.jsf</page>
+    <bookmark/>
   </view>
   <control-flow-rule id="__2">
     <from-activity-id>*</from-activity-id>
@@ -17,6 +25,10 @@
     <control-flow-case id="__4">
       <from-outcome>adfMenu_ShowVacaciones</from-outcome>
       <to-activity-id>ShowVacaciones</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__1">
+      <from-outcome>adfMenu_mainMenu</from-outcome>
+      <to-activity-id>mainMenu</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__5">

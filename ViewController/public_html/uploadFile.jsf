@@ -1,10 +1,36 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+
     <af:document title="uploadFile.jsf" id="d1">
-        <af:form id="f1">
+        <af:form id="f1" usesUpload="true">
             <af:pageTemplate viewId="/template1.jsf" id="pt1">
-                <f:facet name="Content"/>
+                <f:facet name="Content">
+                    <af:panelSplitter id="ps1">
+                        <f:facet name="first">
+                            <h:panelGroup id="pg1" style="height:200px; width:400px;"/>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelGroupLayout layout="scroll" id="pgl1">
+                                <p xmlns="http://www.w3.org/1999/xhtml">
+                                    <af:outputText value="Seleccione Archivo a subir" id="ot2"
+                                                   inlineStyle="font-size:large; color:Teal;"/>
+                                </p>
+                                <p xmlns="http://www.w3.org/1999/xhtml">
+                                    <h:outputText value="Capacitaciones" id="ot1"/><af:inputFile label="Seleccione archivo a subir" id="if2" showRequired="true"
+                                                  inlineStyle="font-size:medium;"/>
+                                </p>
+                                <p xmlns="http://www.w3.org/1999/xhtml">
+                                    <af:outputText value="Vacaciones" id="ot4"/><af:inputFile label="Seleccione archivo a subir" id="if1"
+                                                                                              showRequired="true"/>
+                                </p>
+                                <af:commandButton text="Subir Archivos" id="cb1"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
             </af:pageTemplate>
         </af:form>
     </af:document>

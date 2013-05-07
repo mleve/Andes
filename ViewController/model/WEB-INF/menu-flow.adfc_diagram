@@ -9,15 +9,15 @@
       <property
          name="page">/ShowCaps.jsf</property>
       <property
-         name="thumbnailExpanded">false</property>
+         name="description">&lt;html>&lt;p>&lt;b>Capacitaciones&lt;/b>&lt;/p>&lt;p>Activity ID:  ShowCaps&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>ShowCaps&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="thumbnailExpanded">false</property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">305.09766</property>
+         name="y">209.74707</property>
       <property
-         name="x">-18.5</property>
+         name="x">170.5</property>
    </View>
    <View
       id="View4">
@@ -26,7 +26,7 @@
       <property
          name="page">/ShowVacaciones.jsf</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>ShowVacaciones&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>Vacaciones&lt;/b>&lt;/p>&lt;p>Activity ID:  ShowVacaciones&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
@@ -39,9 +39,9 @@
       <property
          name="activityId">*</property>
       <property
-         name="y">63.689453</property>
+         name="y">62.98828</property>
       <property
-         name="x">50.0</property>
+         name="x">202.0</property>
    </WildcardControlFlowRule>
    <ControlFlowCase
       islink="true"
@@ -51,7 +51,7 @@
       <property
          name="fromOutcome">adfMenu_ShowCaps</property>
       <property
-         name="sdm:polyPoints">B50,50.0,106.33887,-18.5,250.74707,T50</property>
+         name="sdm:polyPoints">B50,202.0,105.637695,170.5,155.74707,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -61,6 +61,31 @@
       <property
          name="fromOutcome">adfMenu_ShowVacaciones</property>
       <property
-         name="sdm:polyPoints">R50,86.0,63.838867,383.02832,281.44824,L50</property>
+         name="sdm:polyPoints">R50,238.0,63.137695,424.02832,227.44824,T50</property>
+   </ControlFlowCase>
+   <View
+      id="View8">
+      <property
+         name="activityId">mainMenu</property>
+      <property
+         name="page">/mainMenu.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Menu&lt;/b>&lt;/p>&lt;p>Activity ID:  mainMenu&lt;/p>&lt;p>Activity Type:  View&lt;/p>&lt;p/>&lt;p>&lt;em>Menu Principal&lt;br/>&lt;/em>&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">201.5918</property>
+      <property
+         name="x">-175.2998</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="WildcardControlFlowRule5"
+      to="View8">
+      <property
+         name="fromOutcome">adfMenu_mainMenu</property>
+      <property
+         name="sdm:polyPoints">L50,166.0,63.137695,-134.2998,201.24121,R50</property>
    </ControlFlowCase>
 </SDM>

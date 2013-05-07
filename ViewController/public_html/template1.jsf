@@ -12,14 +12,16 @@
     <af:panelStretchLayout id="pt_psl1" topHeight="157px" bottomHeight="117px">
         <f:facet name="top">
             <af:panelGroupLayout id="pt_pgl2" layout="vertical" inlineStyle="background-color:#014081;">
-                <af:image source="img/header.jpg" id="pt_i1" inlineStyle="width:100%;"/>
-                <af:navigationPane id="pt_np1" inlineStyle="height:34px;" hint="buttons" var="menuInfo"
-                                   value="#{root_menu}">
-                    <f:facet name="nodeStamp">
-                        <af:commandNavigationItem text="#{menuInfo.label}" id="pt_cni1"
-                                                  destination="#{menuInfo.destination}" action="#{menuInfo.doAction}"
-                                                  inlineStyle="color:White;"/>
-                    </f:facet>
+                <af:image source="img/header.jpg" id="pt_i1" inlineStyle="width:100%; height:127px;"/>
+                <af:navigationPane id="pt_np2">
+                    <af:commandNavigationItem text="Seleccion de Cargo" id="pt_cni1" rendered="true"
+                                              destination="mainMenu.jsf"/>
+                    <af:commandNavigationItem text="Ingreso de Datos" id="pt_cni2" rendered="true"
+                                              destination="/uploadFile.jsf"/>
+                    <af:commandNavigationItem text="Edicion de datos[Vacaciones]" id="pt_cni3"
+                                              destination="showVacaciones.jsf"/>
+                    <af:commandNavigationItem text="Edicion de datos[Capacitaciones]" id="pt_cni4"
+                                              destination="showCaps.jsf" rendered="true"/>
                 </af:navigationPane>
             </af:panelGroupLayout>
         </f:facet>

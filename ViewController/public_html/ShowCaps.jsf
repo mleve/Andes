@@ -8,7 +8,7 @@
                 <f:facet name="Content">
                     <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="158" disabled="true">
                         <f:facet name="first">
-                            <af:panelGroupLayout layout="vertical" id="pgl1">
+                            <af:panelGroupLayout layout="vertical" id="pgl1" inlineStyle="width:312px; height:152px;">
                                 <af:panelHeader text="Capacitaciones" id="ph1">
                                     <af:query id="qryId1" headerText="Search" disclosed="true"
                                               value="#{bindings.CapEmpFromCargoCriteriaQuery.queryDescriptor}"
