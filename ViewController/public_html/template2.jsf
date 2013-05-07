@@ -9,18 +9,13 @@
             </afc:facet>
         </afc:component>
     </af:xmlContent>
-    <af:panelStretchLayout id="pt_psl1" topHeight="157px" bottomHeight="117px">
+    <af:panelStretchLayout id="pt_psl1" topHeight="157px" bottomHeight="117px" dimensionsFrom="children"
+                           rendered="true">
         <f:facet name="top">
             <af:panelGroupLayout id="pt_pgl2" layout="vertical" inlineStyle="background-color:#014081;">
-                <af:image source="img/header.jpg" id="pt_i1" inlineStyle="width:100%;"/>
+                <af:image source="img/header.jpg" id="pt_i1" styleClass="AFStretchWidth"/>
                 <af:navigationPane id="pt_np1" inlineStyle="height:34px;" hint="buttons" var="menuInfo"
-                                   value="#{root_menu}">
-                    <f:facet name="nodeStamp">
-                        <af:commandNavigationItem text="#{menuInfo.label}" id="pt_cni1"
-                                                  destination="#{menuInfo.destination}" action="#{menuInfo.doAction}"
-                                                  inlineStyle="color:White;"/>
-                    </f:facet>
-                </af:navigationPane>
+                                   value="#{root_menu}"/>
             </af:panelGroupLayout>
         </f:facet>
         <f:facet name="center">

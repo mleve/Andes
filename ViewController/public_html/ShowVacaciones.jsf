@@ -10,13 +10,14 @@
                     <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="163" disabled="true">
                         <f:facet name="first">
                             <af:panelGroupLayout layout="vertical" id="pgl1">
-                                <af:panelHeader text="Vacaciones" id="ph1">
+                                <af:panelHeader text="Vacaciones" id="ph1" inlineStyle="width:312px; height:152px;">
                                     <af:query id="qryId1" headerText="Search" disclosed="true"
                                               value="#{bindings.VacEmpFromCargoCriteriaQuery.queryDescriptor}"
                                               model="#{bindings.VacEmpFromCargoCriteriaQuery.queryModel}"
                                               queryListener="#{bindings.VacEmpFromCargoCriteriaQuery.processQuery}"
                                               queryOperationListener="#{bindings.VacEmpFromCargoCriteriaQuery.processQueryOperation}"
-                                              resultComponentId="t1" saveQueryMode="hidden" modeChangeVisible="false"/>
+                                              resultComponentId="t1" saveQueryMode="hidden" modeChangeVisible="false"
+                                              inlineStyle="text-align:left;"/>
                                 </af:panelHeader>
                             </af:panelGroupLayout>
                         </f:facet>
