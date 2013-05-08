@@ -9,7 +9,9 @@
                     <af:panelSplitter id="ps1" orientation="vertical">
                         <f:facet name="first">
                             <af:panelSplitter id="ps2">
-                                <f:facet name="first"/>
+                                <f:facet name="first">
+                                    <h:panelGroup id="pg1" style="height:200px; width:400px;"/>
+                                </f:facet>
                                 <f:facet name="second">
                                     <af:panelGroupLayout layout="scroll" id="pgl1">
                                         <h:outputText value="Seleccione mes a revisar/ingresar" id="ot1"

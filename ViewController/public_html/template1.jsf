@@ -17,11 +17,9 @@
                     <af:commandNavigationItem text="Seleccion de Cargo" id="pt_cni1" rendered="true"
                                               destination="mainMenu.jsf"/>
                     <af:commandNavigationItem text="Ingreso de Datos" id="pt_cni2" rendered="true"
-                                              destination="/uploadFile.jsf"/>
-                    <af:commandNavigationItem text="Edicion de datos[Vacaciones]" id="pt_cni3"
-                                              destination="showVacaciones.jsf"/>
-                    <af:commandNavigationItem text="Edicion de datos[Capacitaciones]" id="pt_cni4"
-                                              destination="showCaps.jsf" rendered="true"/>
+                                              destination="uploadFile.jsf"/>
+                    <af:commandNavigationItem text="Edicion Vacaciones" id="pt_cni3" destination="ShowVacaciones.jsf"/>
+                    <af:commandNavigationItem text="Edicion Capacitaciones" destination="ShowCaps.jsf" id="pt_cni4"/>
                 </af:navigationPane>
             </af:panelGroupLayout>
         </f:facet>
