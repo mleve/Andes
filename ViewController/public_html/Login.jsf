@@ -3,20 +3,20 @@
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="Login.jsf" id="d1">
         <af:form id="f1">
-            <af:pageTemplate viewId="/template1.jsf" id="pt1">
+            <af:pageTemplate viewId="/template2.jsf" id="pt1">
                 <f:facet name="Content">
-                    <af:panelStretchLayout id="psl1">
+                    <af:panelStretchLayout id="psl1" startWidth="56px">
                         <f:facet name="bottom"/>
                         <f:facet name="center">
-                            <af:panelGroupLayout layout="vertical" id="pgl1" inlineStyle="text-align:left;">
+                            <af:panelGroupLayout layout="vertical" id="pgl1"
+                                                 inlineStyle="text-align:left; height:100px; width:400px; padding:50px 50px 50px 50px;">
                                 <af:inputText label="Usuario:" id="it1"/>
                                 <af:inputText label="Contraseña:" id="it2" secret="true"/>
-                                <af:goButton text="Aceptar" id="gb1" destination="ShowVacaciones.jsf"/>
+                                <af:goButton text="Aceptar" id="gb1" destination="mainMenu.jsf"/>
                             </af:panelGroupLayout>
                         </f:facet>
                         <f:facet name="start"/>
                         <f:facet name="end"/>
-                        <f:facet name="top"/>
                     </af:panelStretchLayout>
                 </f:facet>
             </af:pageTemplate>

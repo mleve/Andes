@@ -13,6 +13,7 @@
     <page path="/newVacsForm.jsff" usageId="andes_view_newVacsFormPageDef"/>
     <page path="/WEB-INF/vacaciones-flow.xml#vacaciones-flow@CreateInsert"
           usageId="andes_view_vacaciones_flow_vacaciones_flow_CreateInsertPageDef"/>
+    <page path="/mainMenu.jsf" usageId="andes_view_mainMenuPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="andes_view_untitled1PageDef" path="andes.view.pageDefs.untitled1PageDef"/>
@@ -21,6 +22,7 @@
     <page id="andes_view_newVacsFormPageDef" path="andes.view.pageDefs.newVacsFormPageDef"/>
     <page id="andes_view_vacaciones_flow_vacaciones_flow_CreateInsertPageDef"
           path="andes.view.pageDefs.vacaciones_flow_vacaciones_flow_CreateInsertPageDef"/>
+    <page id="andes_view_mainMenuPageDef" path="andes.view.pageDefs.mainMenuPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="andesDBDataControl" Package="andes.model.vo"

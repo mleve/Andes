@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+    <af:document title="Menu principal" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/template1.jsf" id="pt1">
+                <f:facet name="Content">
+                    <af:panelSplitter id="ps1" orientation="vertical">
+                        <f:facet name="first">
+                            <af:panelSplitter id="ps2">
+                                <f:facet name="first">
+                                    <h:panelGroup id="pg1" style="height:200px; width:400px;"/>
+                                </f:facet>
+                                <f:facet name="second">
+                                    <af:panelGroupLayout layout="scroll" id="pgl1">
+                                        <h:outputText value="Seleccione mes a revisar/ingresar" id="ot1"
+                                                      style="font-size:large; color:Teal;"/>
+                                        <af:inputDate label="Ingrese mes" id="id1" inlineStyle="font-size:medium;"/>
+                                        <p xmlns="http://www.w3.org/1999/xhtml">
+                                            <h:outputText value="Seleccione Cargo a revisar/ingresar" id="ot3"
+                                                          style="color:Teal; font-size:large;"/>
+                                        </p>
+                                        <af:selectOneChoice label="#{bindings.CargosView1.label}" id="soc1"
+                                                            value="#{bindings.CargosView1.inputValue}"
+                                                            required="#{bindings.CargosView1.hints.mandatory}">
+                                            <f:selectItems value="#{bindings.CargosView1.items}" id="si1"/>
+                                        </af:selectOneChoice>
+                                    </af:panelGroupLayout>
+                                </f:facet>
+                            </af:panelSplitter>
+                        </f:facet>
+                        <f:facet name="second"/>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>
