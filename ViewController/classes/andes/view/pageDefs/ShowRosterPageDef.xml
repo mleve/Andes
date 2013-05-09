@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.62.76" id="ShowRosterPageDef"
+                Package="andes.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="RosterView1" RangeSize="25" DataControl="andesDBDataControl" id="RosterView1Iterator"/>
+    <variableIterator id="variables">
+      <variableUsage DataControl="andesDBDataControl" Binds="RosterView1.variablesMap.mes" Name="ExecuteWithParams_mes"
+                     IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <action IterBinding="RosterView1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="mes" NDType="java.lang.String" NDValue="${bindings.ExecuteWithParams_mes}"/>
+    </action>
+    <list IterBinding="variables" id="mes" DTSupportsMRU="true" SelectItemValueMode="ListObject" StaticList="true">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_mes"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="2"/>
+        <Item Value="3"/>
+        <Item Value="4"/>
+        <Item Value="5"/>
+        <Item Value="6"/>
+        <Item Value="7"/>
+        <Item Value="8"/>
+        <Item Value="9"/>
+        <Item Value="10"/>
+        <Item Value="11"/>
+        <Item Value="12"/>
+      </ValueList>
+    </list>
+    <tree IterBinding="RosterView1Iterator" id="RosterView1">
+      <nodeDefinition DefName="andes.model.vo.RosterView" Name="RosterView10">
+        <AttrNames>
+          <Item Value="Rut"/>
+          <Item Value="D01"/>
+          <Item Value="D02"/>
+          <Item Value="D03"/>
+          <Item Value="D04"/>
+          <Item Value="D05"/>
+          <Item Value="D06"/>
+          <Item Value="D07"/>
+          <Item Value="D08"/>
+          <Item Value="D09"/>
+          <Item Value="D10"/>
+          <Item Value="D11"/>
+          <Item Value="D12"/>
+          <Item Value="D13"/>
+          <Item Value="D14"/>
+          <Item Value="D15"/>
+          <Item Value="D16"/>
+          <Item Value="D17"/>
+          <Item Value="D18"/>
+          <Item Value="D19"/>
+          <Item Value="D20"/>
+          <Item Value="D21"/>
+          <Item Value="D22"/>
+          <Item Value="D23"/>
+          <Item Value="D24"/>
+          <Item Value="D25"/>
+          <Item Value="D26"/>
+          <Item Value="D27"/>
+          <Item Value="D28"/>
+          <Item Value="D29"/>
+          <Item Value="D30"/>
+          <Item Value="D31"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

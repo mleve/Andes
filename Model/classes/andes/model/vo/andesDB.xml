@@ -120,6 +120,9 @@
   <ViewUsage
     Name="CapEmpFromCargo1"
     ViewObjectName="andes.model.vo.CapEmpFromCargo"/>
+  <ViewUsage
+    Name="RosterView1"
+    ViewObjectName="andes.model.vo.RosterView"/>
   <ViewLinkUsage
     Name="CapacityhoraCargosFkLink1"
     ViewLinkObjectName="andes.model.vo.CapacityhoraCargosFkLink"

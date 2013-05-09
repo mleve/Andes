@@ -12,6 +12,7 @@
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_NamedConnection" Value="dev"/>
     <Attr Name="_appModuleNames0" Value="andes.model.vo.andesDB"/>
+    <Attr Name="_appModuleNames1" Value="andes.model.eo.AppModule"/>
   </DesignTime>
   <Containee
     Name="eo"
@@ -20,6 +21,7 @@
     <DesignTime>
       <Attr Name="_EO" Value="true"/>
       <Attr Name="_AS" Value="true"/>
+      <Attr Name="_AM" Value="true"/>
     </DesignTime>
   </Containee>
   <Containee

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.62.76" id="GeneratorPageDef"
+                Package="andes.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="FileGenerator" id="FileGeneratorIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="FileGeneratorIterator" id="cargo">
+      <AttrNames>
+        <Item Value="cargo"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="doGet" RequiresUpdateModel="true" Action="invokeMethod" MethodName="doGet"
+                  IsViewObjectMethod="false" DataControl="FileGenerator"
+                  InstanceName="data.FileGenerator.dataProvider"/>
+  </bindings>
+</pageDefinition>

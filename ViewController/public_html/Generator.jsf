@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Generator.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/template1.jsf" id="pt1">
+                <f:facet name="Content">
+                    <af:group id="g1">
+                        <af:inputText value="#{bindings.cargo.inputValue}" label="#{bindings.cargo.hints.label}"
+                                      required="#{bindings.cargo.hints.mandatory}"
+                                      columns="#{bindings.cargo.hints.displayWidth}"
+                                      maximumLength="#{bindings.cargo.hints.precision}"
+                                      shortDesc="#{bindings.cargo.hints.tooltip}" id="it1" autoSubmit="true">
+                            <f:validator binding="#{bindings.cargo.validator}"/>
+                        </af:inputText>
+                        <af:commandButton actionListener="#{bindings.doGet.execute}" text="Generar"
+                                          disabled="#{!bindings.doGet.enabled}" id="cb1"/>
+                    </af:group>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

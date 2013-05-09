@@ -14,6 +14,8 @@
     <page path="/WEB-INF/vacaciones-flow.xml#vacaciones-flow@CreateInsert"
           usageId="andes_view_vacaciones_flow_vacaciones_flow_CreateInsertPageDef"/>
     <page path="/mainMenu.jsf" usageId="andes_view_mainMenuPageDef"/>
+    <page path="/ShowRoster.jsf" usageId="andes_view_ShowRosterPageDef"/>
+    <page path="/Generator.jsf" usageId="andes_view_GeneratorPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="andes_view_untitled1PageDef" path="andes.view.pageDefs.untitled1PageDef"/>
@@ -23,12 +25,20 @@
     <page id="andes_view_vacaciones_flow_vacaciones_flow_CreateInsertPageDef"
           path="andes.view.pageDefs.vacaciones_flow_vacaciones_flow_CreateInsertPageDef"/>
     <page id="andes_view_mainMenuPageDef" path="andes.view.pageDefs.mainMenuPageDef"/>
+    <page id="andes_view_ShowRosterPageDef" path="andes.view.pageDefs.ShowRosterPageDef"/>
+    <page id="andes_view_GeneratorPageDef" path="andes.view.pageDefs.GeneratorPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="FileGenerator" path="andes.model.FileGenerator"/>
     <BC4JDataControl id="andesDBDataControl" Package="andes.model.vo"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
                      SupportsSortCollection="true" Configuration="andesDBLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="AppModuleDataControl" Package="andes.model.eo"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
                      xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
   </dataControlUsages>
 </Application>
