@@ -38,20 +38,67 @@
        Roster.D28, 
        Roster.D29, 
        Roster.D30, 
-       Roster.D31"
-  FromList="DEV.ROSTER Roster"
+       Roster.D31, 
+       Empleados.RUT AS RUT1, 
+       Empleados.IDCARGO, 
+       Cargos.IDCARGO AS IDCARGO1"
+  FromList="DEV.ROSTER Roster, EMPLEADOS Empleados, CARGOS Cargos"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
   UseGlueCode="false"
-  Where=":mes = extract( month from Roster.fecha)">
+  Where="Empleados.IDCARGO = Cargos.IDCARGO AND Empleados.RUT = Roster.rut and Extract (Month from roster.fecha) = :mes AND cargos.idcargo = :cargo">
   <Variable
     Name="mes"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="andes.model.vo.RosterView.mes_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="cargo"
+    Kind="where"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="andes.model.vo.RosterView.cargo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <EntityUsage
     Name="Roster"
     Entity="andes.model.eo.Roster"/>
+  <EntityUsage
+    Name="Empleados"
+    Entity="andes.model.eo.Empleados"
+    SourceUsage="andes.model.vo.RosterView.Roster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"/>
+  <EntityUsage
+    Name="Cargos"
+    Entity="andes.model.eo.Cargos"
+    Association="andes.model.eo.EmpleadosCargosFkAssoc"
+    AssociationEnd="andes.model.eo.EmpleadosCargosFkAssoc.Cargos"
+    SourceUsage="andes.model.vo.RosterView.Empleados"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="andes.model.eo.Empleados.Idcargo"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="andes.model.eo.Cargos.Idcargo"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Id"
     IsNotNull="true"
@@ -259,6 +306,39 @@
     EntityAttrName="D31"
     EntityUsage="Roster"
     AliasName="D31"/>
+  <ViewAttribute
+    Name="Rut1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Rut"
+    EntityUsage="Empleados"
+    AliasName="RUT1"/>
+  <ViewAttribute
+    Name="Idcargo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idcargo"
+    EntityUsage="Empleados"
+    AliasName="IDCARGO"/>
+  <ViewAttribute
+    Name="Idcargo1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Idcargo"
+    EntityUsage="Cargos"
+    AliasName="IDCARGO1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+    <Item Value="Rut1"/>
+  </AttrArray>
+  <LOVUIHints
+    ListType="109"
+    MRUCount="0"
+    ListRangeSize="-1"
+    ComboAttributeCount="1"
+    NullValueFlag="none">
+    <DisplayCriteria/>
+  </LOVUIHints>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="andes.model.ModelBundle"/>

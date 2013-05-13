@@ -5,38 +5,19 @@
   <executables>
     <iterator Binds="RosterView1" RangeSize="25" DataControl="andesDBDataControl" id="RosterView1Iterator"/>
     <variableIterator id="variables">
+      <variableUsage DataControl="andesDBDataControl" Binds="RosterView1.variablesMap.cargo"
+                     Name="ExecuteWithParams_cargo" IsQueriable="false"/>
       <variableUsage DataControl="andesDBDataControl" Binds="RosterView1.variablesMap.mes" Name="ExecuteWithParams_mes"
                      IsQueriable="false"/>
     </variableIterator>
+    <iterator Binds="CargosView1" RangeSize="-1" DataControl="andesDBDataControl" id="CargosView1Iterator"/>
   </executables>
   <bindings>
-    <action IterBinding="RosterView1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
-            Action="executeWithParams">
-      <NamedData NDName="mes" NDType="java.lang.String" NDValue="${bindings.ExecuteWithParams_mes}"/>
-    </action>
-    <list IterBinding="variables" id="mes" DTSupportsMRU="true" SelectItemValueMode="ListObject" StaticList="true">
-      <AttrNames>
-        <Item Value="ExecuteWithParams_mes"/>
-      </AttrNames>
-      <ValueList>
-        <Item Value="1"/>
-        <Item Value="2"/>
-        <Item Value="3"/>
-        <Item Value="4"/>
-        <Item Value="5"/>
-        <Item Value="6"/>
-        <Item Value="7"/>
-        <Item Value="8"/>
-        <Item Value="9"/>
-        <Item Value="10"/>
-        <Item Value="11"/>
-        <Item Value="12"/>
-      </ValueList>
-    </list>
     <tree IterBinding="RosterView1Iterator" id="RosterView1">
       <nodeDefinition DefName="andes.model.vo.RosterView" Name="RosterView10">
         <AttrNames>
           <Item Value="Rut"/>
+          <Item Value="Fecha"/>
           <Item Value="D01"/>
           <Item Value="D02"/>
           <Item Value="D03"/>
@@ -71,5 +52,41 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="RosterView1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="mes" NDType="java.lang.String" NDValue="${bindings.ExecuteWithParams_mes}"/>
+      <NamedData NDName="cargo" NDType="java.lang.String" NDValue="${bindings.ExecuteWithParams_cargo}"/>
+    </action>
+    <list IterBinding="variables" id="cargo" DTSupportsMRU="true" SelectItemValueMode="ListObject" StaticList="false"
+          ListIter="CargosView1Iterator">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_cargo"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Idcargo"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Nombrecargo"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="mes" DTSupportsMRU="true" SelectItemValueMode="ListObject" StaticList="true">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_mes"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="1"/>
+        <Item Value="2"/>
+        <Item Value="3"/>
+        <Item Value="4"/>
+        <Item Value="5"/>
+        <Item Value="6"/>
+        <Item Value="7"/>
+        <Item Value="8"/>
+        <Item Value="9"/>
+        <Item Value="10"/>
+        <Item Value="11"/>
+        <Item Value="12"/>
+      </ValueList>
+    </list>
   </bindings>
 </pageDefinition>

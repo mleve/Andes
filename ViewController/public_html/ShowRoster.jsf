@@ -8,161 +8,189 @@
                 <f:facet name="Content">
                     <af:panelSplitter id="ps1" orientation="vertical">
                         <f:facet name="first">
-                            <af:panelGroupLayout layout="scroll" id="pgl1">
-                                <af:selectOneChoice value="#{bindings.mes.inputValue}" label="Mes"
-                                                    required="#{bindings.mes.hints.mandatory}"
-                                                    shortDesc="#{bindings.mes.hints.tooltip}" id="soc1">
-                                    <f:selectItems value="#{bindings.mes.items}" id="si1"/>
-                                </af:selectOneChoice>
-                                <af:commandButton actionListener="#{bindings.ExecuteWithParams.execute}"
-                                                  text="Buscar"
-                                                  disabled="#{!bindings.ExecuteWithParams.enabled}" id="cb1"/>
-                            </af:panelGroupLayout>
+                            <af:panelSplitter id="ps3" splitterPosition="328">
+                                <f:facet name="first">
+                                    <af:panelGroupLayout layout="scroll" id="pgl1">
+                                        <af:selectOneChoice value="#{bindings.cargo.inputValue}"
+                                                            label="#{bindings.cargo.label}"
+                                                            required="#{bindings.cargo.hints.mandatory}"
+                                                            shortDesc="#{bindings.cargo.hints.tooltip}" id="soc1">
+                                            <f:selectItems value="#{bindings.cargo.items}" id="si1"/>
+                                        </af:selectOneChoice>
+                                        <af:selectOneChoice value="#{bindings.mes.inputValue}"
+                                                            label="#{bindings.mes.label}"
+                                                            required="#{bindings.mes.hints.mandatory}"
+                                                            shortDesc="#{bindings.mes.hints.tooltip}" id="soc2">
+                                            <f:selectItems value="#{bindings.mes.items}" id="si2"/>
+                                        </af:selectOneChoice>
+                                        <af:commandButton actionListener="#{bindings.ExecuteWithParams.execute}"
+                                                          text="Buscar"
+                                                          disabled="#{!bindings.ExecuteWithParams.enabled}" id="cb1"/>
+                                    </af:panelGroupLayout>
+                                </f:facet>
+                                <f:facet name="second">
+                                    <af:panelTabbed id="pt2" rendered="true">
+                                        <af:showDetailItem text="Indicadores" id="sdi1" rendered="true">
+                                            <af:inputText label="Justicia" id="it1" value="80%" editable="onAccess"
+                                                          simple="false" readOnly="true"/>
+                                            <af:inputText label="Cobertura" id="it2" value="60%" editable="onAccess"
+                                                          readOnly="true"/>
+                                            <af:inputText label="Quiebres" id="it3" value="5" editable="onAccess"
+                                                          readOnly="true"/>
+                                        </af:showDetailItem>
+                                        <af:showDetailItem text="Detalle quiebres" id="sdi2">
+                                            <af:inputText label="Domingos Libres" id="it4" value="2" readOnly="true"/>
+                                            <af:inputText label="Fines de semana" id="it5" value="1" readOnly="true"/>
+                                            <af:inputText label="Dos libres continuos" id="it6" value="2"
+                                                          disabled="false" readOnly="true"/>
+                                        </af:showDetailItem>
+                                    </af:panelTabbed>
+                                </f:facet>
+                            </af:panelSplitter>
                         </f:facet>
                         <f:facet name="second">
-                            <af:panelSplitter id="ps2" splitterPosition="591">
-                                <f:facet name="first">
-                                    <af:table value="#{bindings.RosterView1.collectionModel}" var="row"
-                                              rows="#{bindings.RosterView1.rangeSize}"
-                                              emptyText="#{bindings.RosterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                              fetchSize="#{bindings.RosterView1.rangeSize}" rowBandingInterval="0"
-                                              selectedRowKeys="#{bindings.RosterView1.collectionModel.selectedRow}"
-                                              selectionListener="#{bindings.RosterView1.collectionModel.makeCurrent}"
-                                              rowSelection="single" id="t1" partialTriggers="::cb1">
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.Rut.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.Rut.label}" id="c1">
-                                            <af:outputText value="#{row.Rut}" id="ot1"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D01.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D01.label}" id="c2"
-                                                   width="40">
-                                            <af:outputText value="#{row.D01}" id="ot2"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D02.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D02.label}" id="c3">
-                                            <af:outputText value="#{row.D02}" id="ot3"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D03.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D03.label}" id="c4">
-                                            <af:outputText value="#{row.D03}" id="ot4"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D04.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D04.label}" id="c5">
-                                            <af:outputText value="#{row.D04}" id="ot5"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D05.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D05.label}" id="c6">
-                                            <af:outputText value="#{row.D05}" id="ot6"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D06.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D06.label}" id="c7">
-                                            <af:outputText value="#{row.D06}" id="ot7"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D07.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D07.label}" id="c8">
-                                            <af:outputText value="#{row.D07}" id="ot8"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D08.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D08.label}" id="c9">
-                                            <af:outputText value="#{row.D08}" id="ot9"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D09.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D09.label}" id="c10">
-                                            <af:outputText value="#{row.D09}" id="ot10"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D10.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D10.label}" id="c11">
-                                            <af:outputText value="#{row.D10}" id="ot11"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D11.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D11.label}" id="c12">
-                                            <af:outputText value="#{row.D11}" id="ot12"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D12.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D12.label}" id="c13">
-                                            <af:outputText value="#{row.D12}" id="ot13"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D13.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D13.label}" id="c14">
-                                            <af:outputText value="#{row.D13}" id="ot14"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D14.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D14.label}" id="c15">
-                                            <af:outputText value="#{row.D14}" id="ot15"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D15.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D15.label}" id="c16">
-                                            <af:outputText value="#{row.D15}" id="ot16"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D16.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D16.label}" id="c17">
-                                            <af:outputText value="#{row.D16}" id="ot17"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D17.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D17.label}" id="c18">
-                                            <af:outputText value="#{row.D17}" id="ot18"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D18.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D18.label}" id="c19">
-                                            <af:outputText value="#{row.D18}" id="ot19"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D19.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D19.label}" id="c20">
-                                            <af:outputText value="#{row.D19}" id="ot20"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D20.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D20.label}" id="c21">
-                                            <af:outputText value="#{row.D20}" id="ot21"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D21.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D21.label}" id="c22">
-                                            <af:outputText value="#{row.D21}" id="ot22"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D22.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D22.label}" id="c23">
-                                            <af:outputText value="#{row.D22}" id="ot23"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D23.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D23.label}" id="c24">
-                                            <af:outputText value="#{row.D23}" id="ot24"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D24.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D24.label}" id="c25">
-                                            <af:outputText value="#{row.D24}" id="ot25"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D25.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D25.label}" id="c26">
-                                            <af:outputText value="#{row.D25}" id="ot26"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D26.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D26.label}" id="c27">
-                                            <af:outputText value="#{row.D26}" id="ot27"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D27.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D27.label}" id="c28">
-                                            <af:outputText value="#{row.D27}" id="ot28"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D28.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D28.label}" id="c29">
-                                            <af:outputText value="#{row.D28}" id="ot29"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D29.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D29.label}" id="c30">
-                                            <af:outputText value="#{row.D29}" id="ot30"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D30.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D30.label}" id="c31">
-                                            <af:outputText value="#{row.D30}" id="ot31"/>
-                                        </af:column>
-                                        <af:column sortProperty="#{bindings.RosterView1.hints.D31.name}" sortable="true"
-                                                   headerText="#{bindings.RosterView1.hints.D31.label}" id="c32"
-                                                   width="20">
-                                            <af:outputText value="#{row.D31}" id="ot32"/>
-                                        </af:column>
-                                    </af:table>
-                                </f:facet>
-                                <f:facet name="second"/>
-                            </af:panelSplitter>
+                            <af:table value="#{bindings.RosterView1.collectionModel}" var="row"
+                                      rows="#{bindings.RosterView1.rangeSize}"
+                                      emptyText="#{bindings.RosterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      fetchSize="#{bindings.RosterView1.rangeSize}" rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.RosterView1.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.RosterView1.collectionModel.makeCurrent}"
+                                      rowSelection="single" id="t1" partialTriggers="::cb1">
+                                <af:column sortProperty="#{bindings.RosterView1.hints.Rut.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.Rut.label}" id="c1">
+                                    <af:outputText value="#{row.Rut}" id="ot1"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.Fecha.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.Fecha.label}" id="c2">
+                                    <af:outputText value="#{row.Fecha}" id="ot2">
+                                        <af:convertDateTime pattern="#{bindings.RosterView1.hints.Fecha.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D01.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D01.label}" id="c3">
+                                    <af:outputText value="#{row.D01}" id="ot3"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D02.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D02.label}" id="c4">
+                                    <af:outputText value="#{row.D02}" id="ot4"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D03.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D03.label}" id="c5">
+                                    <af:outputText value="#{row.D03}" id="ot5"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D04.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D04.label}" id="c6">
+                                    <af:outputText value="#{row.D04}" id="ot6"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D05.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D05.label}" id="c7">
+                                    <af:outputText value="#{row.D05}" id="ot7"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D06.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D06.label}" id="c8">
+                                    <af:outputText value="#{row.D06}" id="ot8"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D07.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D07.label}" id="c9">
+                                    <af:outputText value="#{row.D07}" id="ot9"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D08.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D08.label}" id="c10">
+                                    <af:outputText value="#{row.D08}" id="ot10"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D09.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D09.label}" id="c11">
+                                    <af:outputText value="#{row.D09}" id="ot11"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D10.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D10.label}" id="c12">
+                                    <af:outputText value="#{row.D10}" id="ot12"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D11.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D11.label}" id="c13">
+                                    <af:outputText value="#{row.D11}" id="ot13"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D12.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D12.label}" id="c14">
+                                    <af:outputText value="#{row.D12}" id="ot14"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D13.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D13.label}" id="c15">
+                                    <af:outputText value="#{row.D13}" id="ot15"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D14.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D14.label}" id="c16">
+                                    <af:outputText value="#{row.D14}" id="ot16"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D15.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D15.label}" id="c17">
+                                    <af:outputText value="#{row.D15}" id="ot17"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D16.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D16.label}" id="c18">
+                                    <af:outputText value="#{row.D16}" id="ot18"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D17.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D17.label}" id="c19">
+                                    <af:outputText value="#{row.D17}" id="ot19"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D18.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D18.label}" id="c20">
+                                    <af:outputText value="#{row.D18}" id="ot20"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D19.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D19.label}" id="c21">
+                                    <af:outputText value="#{row.D19}" id="ot21"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D20.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D20.label}" id="c22">
+                                    <af:outputText value="#{row.D20}" id="ot22"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D21.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D21.label}" id="c23">
+                                    <af:outputText value="#{row.D21}" id="ot23"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D22.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D22.label}" id="c24">
+                                    <af:outputText value="#{row.D22}" id="ot24"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D23.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D23.label}" id="c25">
+                                    <af:outputText value="#{row.D23}" id="ot25"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D24.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D24.label}" id="c26">
+                                    <af:outputText value="#{row.D24}" id="ot26"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D25.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D25.label}" id="c27">
+                                    <af:outputText value="#{row.D25}" id="ot27"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D26.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D26.label}" id="c28">
+                                    <af:outputText value="#{row.D26}" id="ot28"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D27.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D27.label}" id="c29">
+                                    <af:outputText value="#{row.D27}" id="ot29"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D28.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D28.label}" id="c30">
+                                    <af:outputText value="#{row.D28}" id="ot30"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D29.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D29.label}" id="c31">
+                                    <af:outputText value="#{row.D29}" id="ot31"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D30.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D30.label}" id="c32">
+                                    <af:outputText value="#{row.D30}" id="ot32"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.RosterView1.hints.D31.name}" sortable="true"
+                                           headerText="#{bindings.RosterView1.hints.D31.label}" id="c33">
+                                    <af:outputText value="#{row.D31}" id="ot33"/>
+                                </af:column>
+                            </af:table>
                         </f:facet>
                     </af:panelSplitter>
                 </f:facet>

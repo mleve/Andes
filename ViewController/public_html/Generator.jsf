@@ -5,19 +5,7 @@
         <af:messages id="m1"/>
         <af:form id="f1">
             <af:pageTemplate viewId="/template1.jsf" id="pt1">
-                <f:facet name="Content">
-                    <af:group id="g1">
-                        <af:inputText value="#{bindings.cargo.inputValue}" label="#{bindings.cargo.hints.label}"
-                                      required="#{bindings.cargo.hints.mandatory}"
-                                      columns="#{bindings.cargo.hints.displayWidth}"
-                                      maximumLength="#{bindings.cargo.hints.precision}"
-                                      shortDesc="#{bindings.cargo.hints.tooltip}" id="it1" autoSubmit="true">
-                            <f:validator binding="#{bindings.cargo.validator}"/>
-                        </af:inputText>
-                        <af:commandButton actionListener="#{bindings.doGet.execute}" text="Generar"
-                                          disabled="#{!bindings.doGet.enabled}" id="cb1"/>
-                    </af:group>
-                </f:facet>
+                <f:facet name="Content"/>
             </af:pageTemplate>
         </af:form>
     </af:document>
